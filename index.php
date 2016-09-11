@@ -81,6 +81,10 @@
 			background-color: white;
 			color: black;
 		}
+		.footer {
+			margin-bottom: 50px;
+			font-size: 80%;
+		}
 		</style>
 		<?php
 		function listDir($dir) {
@@ -109,6 +113,7 @@
 				<div class="title">sandbox</div>
 				<?php listDir('tests/'); ?>
 			</div>
+			<div class="footer">Marginally better code available at <a href="//www.github.com/taylortom">@taylortom</a> on GitHub (no guarantees made).</div>
 		</div>
 	</body>
 </html>
