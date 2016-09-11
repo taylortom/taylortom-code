@@ -44,14 +44,16 @@
 			font-weight: bold;
 		}
 		.project {
+			display: inline-table;
 			padding: 10px;
 			margin-bottom: 10px;
 			border: 1px solid black;
 			border-radius: 3px;
+			width: 47%;
 		}
 		.project .name {
-			display: inline-block;
-			width: 35%;
+			/*display: inline-block;
+			width: 35%;*/
 			padding-right: 10px;
 			font-size: 18px;
 			vertical-align: top;
@@ -61,7 +63,7 @@
 			display: inline-block;
 			padding-left: 15px;
 			border-left: 2px solid white;
-			max-width: 62%;
+			/*max-width: 62%;*/
 		}
 		.project .description .text {
 			padding-bottom: 10px;
