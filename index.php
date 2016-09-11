@@ -92,6 +92,15 @@
 			margin-bottom: 50px;
 			font-size: 80%;
 		}
+		@media(max-width: 799px) {
+			.page {
+				max-width: 100%;
+				margin: 20px 10px;
+			}
+			.project {
+				width: 100%;
+			}
+		}
 		</style>
 		<?php
 		function listDir($dir) {
