@@ -21,14 +21,17 @@
 			font-family: 'Source Code Pro', monospace;
 			background-color: black;
 			color: white;
+			margin: 0 20px;
+		}
+		a {
+			color: white;
 		}
 		.page {
 			max-width: 800px;
-			margin-top: 25px;
 			margin: 0 auto;
 		}
 		.page > .title {
-			margin: 35px 0 25px 0;
+			margin: 35px 0 35px 0;
 			font-size: 32px;
 			font-weight: bold;
 		}
@@ -54,8 +57,10 @@
 		.project .name {
 			/*display: inline-block;
 			width: 35%;*/
+			margin-bottom: 10px;
 			padding-right: 10px;
 			font-size: 18px;
+			font-weight: bold;
 			vertical-align: top;
 			word-break: break-all;
 		}
