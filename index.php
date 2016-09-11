@@ -81,6 +81,11 @@
 			background-color: white;
 			color: black;
 		}
+		.project a:focus {
+			outline: none;
+			background-color: white;
+			color: black !important;
+		}
 		.footer {
 			margin-bottom: 50px;
 			font-size: 80%;
