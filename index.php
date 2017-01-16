@@ -121,7 +121,7 @@
 		}
 		?>
 		<div class="page">
-			<div class="title">> code.taylortom.co.uk</div>
+			<div class="title">>> <?php echo  getenv('HTTP_HOST') ?></div>
 			<div class="examples group">
 				<div class="title">examples</div>
 				<?php listDir('examples/'); ?>
