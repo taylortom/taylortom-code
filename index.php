@@ -6,7 +6,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-		<title>Code | taylortom.co.uk</title>
+		<title>Code | Thomas Taylor</title>
 
 		<link href='http://fonts.googleapis.com/css?family=Oxygen:400,700,300|Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
 		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
