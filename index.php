@@ -98,6 +98,9 @@
 				max-width: 100%;
 				margin: 20px 10px;
 			}
+			.page > .title {
+				font-size: 19px;
+			}
 			.project {
 				width: 100%;
 			}
