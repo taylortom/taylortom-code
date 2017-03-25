@@ -110,6 +110,22 @@
 		}
 		</style>
 		<?php
+		include_once("analyticstracking.php")
+
+		function createGroups() {
+			$dirs = scandir('.');
+			foreach ($dirs as $key => $value) {
+				if('.' === $value || '..' === $value) {
+					continue;
+				}
+				if(is_dir($value)) {
+					echo '<div class="' . $value . ' group">';
+						echo '<div class="title">' . $value . '</div>';
+						listDir($value.'/');
+					echo '</div>';
+		    }
+			}
+		}
 		function listDir($dir) {
 			// try and load the description readme
 			$desc = @file_get_contents('./' . $dir . '/README.txt');
