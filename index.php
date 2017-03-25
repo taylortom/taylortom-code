@@ -42,6 +42,9 @@
 			font-size: 21px;
 			font-weight: bold;
 		}
+		.page .group > .description {
+			margin-bottom: 15px;
+		}
 		.project {
 			display: inline-table;
 			padding: 10px;
@@ -108,16 +111,24 @@
 		</style>
 		<?php
 		function listDir($dir) {
+			// try and load the description readme
+			$desc = @file_get_contents('./' . $dir . '/README.txt');
+			if($desc) {
+				echo '<div class="description">' . $desc . '</div>';
+			}
 			$dirs = scandir($dir);
 			foreach ($dirs as $key => $value) {
-				if('.' !== $value && '..' !== $value) {
+				if('.' === $value || '..' === $value) {
+					continue;
+				}
+				if(is_dir('./' . $dir . $value)) {
 					$text = @file_get_contents('./' . $dir . $value . '/README.txt');
 					echo '<div class="project">';
-						echo '<div class="name">> ' . $value . '</div>';
-						echo '<div class="description">';
-							if($text) echo '<div class="text">' . $text . '</div>';
-							echo '<a href="' . $dir . $value . '" target="_blank">View</a>';
-						echo '</div>';
+					echo '<div class="name">> ' . $value . '</div>';
+					echo '<div class="description">';
+					if($text) echo '<div class="text">' . $text . '</div>';
+					echo '<a href="' . $dir . $value . '" target="_blank">View</a>';
+					echo '</div>';
 					echo '</div>';
 				}
 			}
@@ -125,14 +136,7 @@
 		?>
 		<div class="page">
 			<div class="title">>> <?php echo  getenv('HTTP_HOST') ?></div>
-			<div class="examples group">
-				<div class="title">examples</div>
-				<?php listDir('examples/'); ?>
-			</div>
-			<div class="tests group">
-				<div class="title">sandbox</div>
-				<?php listDir('tests/'); ?>
-			</div>
+			<?php createGroups(); ?>
 			<div class="footer">Marginally better code available at <a href="//www.github.com/taylortom">@taylortom</a> on GitHub (no guarantees made).</div>
 		</div>
 	</body>
