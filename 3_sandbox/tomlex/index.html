@@ -1,0 +1,140 @@
+<!doctype HTML>
+<html>
+  <head>
+    <title>13.04.2015</title>
+    <style>
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .container {
+        margin: 30px 0;
+        text-align: center;
+      }
+      .image {
+        margin: 0 auto;
+        height: 45vw;
+      }
+      .image > img {
+        display: none;
+        height: 100%;
+      }
+      .image > img.show {
+        display: inline;
+      }
+      .timer {
+        display: inline-block;
+        margin: 20px;
+        font-family: sans-serif;
+      }
+      .timer .unit {
+        display: inline-block;
+        margin-right: 25px;
+        margin-bottom: 20px;
+      }
+      .timer .unit .number {
+        display: inline-block;
+        margin-right: 3px;
+        width: 50px;
+        height: 75px;
+        background-color: black;
+        border-radius: 6px;
+        line-height: 75px;
+        font-size: 54px;
+        color: white;
+        text-align: center;
+      }
+      .timer .unit .number .line {
+        position: relative;
+        top: 38px;
+        width: 48px;
+        border-bottom: 2px solid black;
+      }
+      .timer .unit .label {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 12px;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.slim.min.js" integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8=" crossorigin="anonymous"></script>
+    <script>
+      var data = {
+        start: moment([2015,03,13,12,30]),
+        units: false
+      };
+      var init = function() {
+        createUnits('years','months','days','hours','minutes','seconds');
+        onTick();
+        window.setInterval(onTick, 1000);
+      };
+
+      var createUnits = function() {
+        data.units = [];
+        for(var i = 0; i < arguments.length; i++) {
+          var unitName = arguments[i];
+          var unit = new Unit(unitName);
+          data.units.push(unit);
+        }
+      };
+
+      var onTick = function() {
+        var tempStart = data.start.clone();
+        for(var i = 0; i < data.units.length; i++) {
+          var unit = data.units[i];
+          tempStart = unit.update(tempStart);
+          if(unit.name === 'days' && unit.value === 0) {
+            celebrate();
+          }
+        }
+      };
+
+      var celebrate = function() {
+        $('img').addClass('show');
+      };
+
+      var Unit = function(unitName) {
+        var html = '<div class="unit ' + unitName + '"><div class="number first"><div class="line"></div><div class="value"></div></div><div class="number second"><div class="line"></div><div class="value"></div></div><div class="label"></div></div>';
+        $('.timer').append(html);
+
+        var $el = $('.timer .unit.' + unitName);
+        $('.label', $el).html(unitName.toUpperCase());
+
+        // public
+
+        this.name = unitName;
+        this.value = 0;
+
+        this.update = function(momentDate) {
+          this.value = momentDate.diff(moment(), this.name)*-1;
+
+          var strVal = this.value.toString();
+          if(strVal.length === 1) {
+            var first = '0';
+            var second = strVal.charAt(0);
+          } else {
+            var first = strVal.charAt(0);
+            var second = strVal.charAt(1);
+          }
+
+          $('.first .value', $el).html(first);
+          $('.second .value', $el).html(second);
+
+          return momentDate.add(this.value,this.name);
+        };
+
+        return this;
+      };
+
+      $(init);
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="image">
+        <img src="heart.png"/>
+      </div>
+      <div class="timer"></div>
+    </div>
+  </body>
+</html>

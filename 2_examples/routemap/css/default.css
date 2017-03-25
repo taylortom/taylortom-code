@@ -1,0 +1,32 @@
+#viewArea
+{
+	width: 800px;
+	height: 600px;
+	border:5px solid black;
+	overflow:hidden;
+	position:relative;
+    margin: 0 auto;
+}
+
+#canvas
+{
+    -webkit-tap-highlight-color: transparent;
+	/*cursor: move;*/
+}
+
+.dragCursor {
+    /* cursor: crosshair;*/
+    cursor: url(../assets/hand_cursor_closed.cur), auto;
+}
+
+.overCursor{
+    cursor: url(../assets/hand_cursor_open.cur), auto;
+}
+
+.pointCursor{
+    cursor: url(../assets/hand_cursor_link.cur), auto;
+}
+
+.defaultCursor{
+    cursor: default;
+}
