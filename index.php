@@ -111,7 +111,7 @@
 		}
 		</style>
 		<?php
-		include_once("analyticstracking.php")
+		include_once("analyticstracking.php");
 
 		function createGroups() {
 			$dirs = scandir('.');
