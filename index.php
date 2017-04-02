@@ -28,7 +28,7 @@
 			margin: 0 auto;
 		}
 		.page > .title {
-			margin: 35px 0 35px 0;
+			margin: 5%px 0 30px 0;
 			font-size: 32px;
 			font-weight: bold;
 		}
@@ -44,28 +44,35 @@
 			font-weight: bold;
 		}
 		.page .group > .description {
+			padding-top: 10px;
 			margin-bottom: 15px;
 		}
 		.project {
 			display: inline-table;
-			padding: 10px;
+			padding-top: 10px;
 			margin-bottom: 10px;
 			border: 1px solid black;
 			border-radius: 3px;
 			width: 47%;
 		}
+		.project.odd {
+			margin-right: 30px;
+		}
 		.project .name {
 			/*display: inline-block;
-			width: 35%;*/
-			margin-bottom: 10px;
+			width: 35%;
+			margin-bottom: 10px;*/
+			padding-bottom: 10px;
 			padding-right: 10px;
 			font-size: 18px;
 			font-weight: bold;
+			border-bottom: 2px solid white;
 			vertical-align: top;
 			word-break: break-all;
 		}
 		.project .description {
 			display: inline-block;
+			padding-top: 10px;
 			padding-left: 15px;
 			border-left: 2px solid white;
 			/*max-width: 62%;*/
@@ -134,13 +141,15 @@
 				echo '<div class="description">' . $desc . '</div>';
 			}
 			$dirs = scandir($dir);
+			$i = 1;
 			foreach ($dirs as $key => $value) {
 				if('.' === $value || '..' === $value) {
 					continue;
 				}
 				if(is_dir('./' . $dir . $value)) {
+					$className = (($i++ % 2) === 0) ? 'even' : 'odd';
 					$text = @file_get_contents('./' . $dir . $value . '/README.txt');
-					echo '<div class="project">';
+					echo '<div class="project ' . $className . '">';
 					echo '<div class="name">> ' . $value . '</div>';
 					echo '<div class="description">';
 					if($text) echo '<div class="text">' . $text . '</div>';
