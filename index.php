@@ -9,13 +9,12 @@
 
 		<title>Code | Thomas Taylor</title>
 
-		<link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
 		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<style>
 		body {
-			font-family: 'PT Mono', monospace;
+			font-family: monospace;
 			background-color: black;
 			color: white;
 			margin: 0 20px;
