@@ -27,7 +27,7 @@
 			margin: 0 auto;
 		}
 		.page > .title {
-			margin: 5%px 0 30px 0;
+			margin: 35px 0 30px 0;
 			font-size: 32px;
 			font-weight: bold;
 		}
