@@ -14,8 +14,9 @@
 	<body>
 		<style>
 		body {
-			font-family: monospace;
 			background-color: black;
+			font-family: monospace;
+			font-size: 15px;
 			color: white;
 			margin: 0 20px;
 		}
@@ -28,7 +29,7 @@
 		}
 		.page > .title {
 			margin: 35px 0 30px 0;
-			font-size: 32px;
+			font-size: 200%;
 			font-weight: bold;
 		}
 		.page .group {
@@ -39,7 +40,7 @@
 			padding: 5px;
 			background-color: white;
 			color: black;
-			font-size: 21px;
+			font-size: 140%;
 			font-weight: bold;
 		}
 		.page .group > .description {
@@ -58,12 +59,9 @@
 			margin-right: 30px;
 		}
 		.project .name {
-			/*display: inline-block;
-			width: 35%;
-			margin-bottom: 10px;*/
 			padding-bottom: 10px;
 			padding-right: 10px;
-			font-size: 18px;
+			font-size: 130%;
 			font-weight: bold;
 			border-bottom: 2px solid white;
 			vertical-align: top;
@@ -74,7 +72,6 @@
 			padding-top: 10px;
 			padding-left: 15px;
 			border-left: 2px solid white;
-			/*max-width: 62%;*/
 		}
 		.project .description .text {
 			padding-bottom: 10px;
@@ -101,7 +98,7 @@
 		}
 		.footer {
 			margin-bottom: 50px;
-			font-size: 80%;
+			font-size: 95%;
 		}
 		@media(max-width: 799px) {
 			.page {
