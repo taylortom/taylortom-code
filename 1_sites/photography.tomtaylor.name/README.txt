@@ -1,1 +1,1 @@
-My personal photo gallery site. Uses Flickr as a backend.
+My personal photo gallery site that plugs into my Flickr account.
