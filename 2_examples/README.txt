@@ -1,1 +1,0 @@
-Small portfolio-type pieces. All source code hosted on GitHub.

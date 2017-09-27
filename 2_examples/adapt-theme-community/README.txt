@@ -1,1 +1,0 @@
-An Adapt framework theme based on Adapt's community site.

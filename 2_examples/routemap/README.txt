@@ -1,1 +1,0 @@
-Prototype HTML5 widget for visualisation of learner path data.
