@@ -1,0 +1,1 @@
+A node-based command line interface for generating simple static websites. Static site content is written in markdown and handlebars (where needed), and uses LESS for styling (although plain CSS is also supported). This is all boiled down into static HTML pages with CSS.

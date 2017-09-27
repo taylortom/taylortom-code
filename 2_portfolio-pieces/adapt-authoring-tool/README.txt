@@ -1,0 +1,1 @@
+The product I work on day-to-day on behalf for Kineo/the Adapt open-source project, the Adapt authoring tool is an open-source server-based web-app for authoring eLearning courses using the Adapt Framework.
