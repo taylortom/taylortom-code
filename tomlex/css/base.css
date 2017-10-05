@@ -1,0 +1,132 @@
+html {
+  height: 100vh;
+  background: #101010;
+  background: url(https://image.freepik.com/free-photo/blackboard-texture_1205-375.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body {
+  padding: 30px;
+  font-family: 'Droid Sans', sans-serif;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.image {
+  margin: 0 auto;
+  max-width: 500px;
+}
+.image > img {
+  display: inline;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  max-width: 500px;
+}
+
+.header {
+  background-color: #c50000;
+  color: white;
+  border-bottom: 2px solid black;
+  padding: 5px 0;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 36px;
+  text-align: center;
+}
+
+.content-block {
+  border-bottom: 2px solid black;
+}
+.content-block:last-child {
+  border-bottom: none;
+}
+.content-block .title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  background: #e6e6e6;
+  border: 1px solid #c3c3c3;
+  border-left: none;
+  border-right: none;
+  padding: 3px 10px;
+  margin-bottom: 15px;
+}
+
+.timer {
+  font-family: sans-serif;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.timer .unit {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.timer .unit .number {
+  display: inline-block;
+  margin-right: 3px;
+  width: 30px;
+  height: 45px;
+  background-color: black;
+  border-radius: 6px;
+  line-height: 45px;
+  font-size: 34px;
+  color: white;
+  text-align: center;
+}
+.timer .unit .number .line {
+  position: relative;
+  top: 23px;
+  width: 30px;
+  border-bottom: 1px solid black;
+}
+.timer .unit .label {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 12px;
+}
+.stats {
+  margin: 20px;
+  border-radius: 6px;
+  background-color: black;
+  font-size: 26px;
+  text-align: left;
+  color: white;
+  padding: 5px 0;
+}
+.stat {
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding: 3px 10px 5px 15px;
+}
+.stat:last-child {
+  border: none;
+}
+.stat .label {
+  font-size: 60%;
+  color: rgba(255,255,255,0.5);
+  padding-left: 7px;
+}
+
+.mems {
+  text-align: left;
+  margin: 20px;
+}
+.mems .year {
+  color: #c50000;
+}
+.mems .mem {
+  margin-bottom: 5px;
+}

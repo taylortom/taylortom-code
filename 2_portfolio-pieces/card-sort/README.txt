@@ -1,1 +1,0 @@
-A simple web-app for online card sorting activities.
