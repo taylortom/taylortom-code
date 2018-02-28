@@ -100,7 +100,7 @@
 			margin-bottom: 50px;
 			font-size: 95%;
 		}
-		@media(max-width: 799px) {
+		@media(max-width: 765px) {
 			.page {
 				max-width: 100%;
 				margin: 20px 10px;
@@ -115,9 +115,9 @@
 		</style>
 		<?php
 		include_once("analyticstracking.php");
-	
+
 		function createGroups() {
-			$root = "./structure/";		
+			$root = "./structure/";
 			$dirs = scandir($root);
 			foreach ($dirs as $key => $value) {
 				if('.' === $value || '..' === $value) {
@@ -132,7 +132,7 @@
 			}
 		}
 		function listDir($dir) {
-			$root = "/var/sites/c/code.tomtaylor.name/public_html/structure/";		
+			$root = "/var/sites/c/code.tomtaylor.name/public_html/structure/";
 			// try and load the description readme
 			$desc = @file_get_contents('./' . $dir . '/README.txt');
 			if($desc) {
