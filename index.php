@@ -32,6 +32,31 @@
 			font-size: 200%;
 			font-weight: bold;
 		}
+		.page > .title > .caret {
+			margin-right: 7px;
+		  font-size: 80%;
+		}
+		.page > .title > .titletext {
+			margin-right: 3px;
+		}
+		.page > .title > .cursor {
+			display: inline-block;
+			width: 10px;
+		  border-bottom: 3px solid white;
+		  margin-bottom: -2px;
+			animation: blink 1s infinite;
+		}
+		@-webkit-keyframes blink {
+			0%   { opacity: 1; }
+	    50%  { opacity: 0; }
+	    100% { opacity: 1; }
+		}
+		@-keyframes blink {
+			0%   { opacity: 1; }
+	    50%  { opacity: 0; }
+	    100% { opacity: 1; }
+		}
+
 		.page .group {
 			margin-bottom: 30px;
 		}
@@ -159,10 +184,25 @@
 		}
 		?>
 		<div class="page">
-			<div class="title">>> <?php echo  getenv('HTTP_HOST') ?></div>
+			<div class="title"><span class="caret">>></span><span class="titletext"></span><div class="cursor"></div></div>
 			<?php createGroups(); ?>
 			<div class="footer">Marginally better code available at <a href="//www.github.com/taylortom">@taylortom</a> on GitHub (no guarantees made).</div>
 		</div>
 	</body>
 	<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+	<script type="text/javascript">
+		function type() {
+			var message = "<?php echo  getenv('HTTP_HOST') ?>";
+			var el = document.querySelector('.titletext');
+			el.textContent = "";
+			var interval = setInterval(function() {
+				var textLength = el.textContent.length;
+				if(textLength === message.length) {
+					return clearInterval(interval);
+				}
+				el.textContent += message[textLength];
+			}, 100);
+		}
+		setTimeout(type, 500);
+	</script>
 </html>
