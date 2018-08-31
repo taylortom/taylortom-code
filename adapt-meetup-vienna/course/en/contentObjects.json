@@ -1,0 +1,24 @@
+[
+  {
+    "_id": "5a0b4fa79abbd30cbd307f51",
+    "_type": "page",
+    "_parentId": "course",
+    "_graphic": {
+      "alt": "",
+      "src": ""
+    },
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_lockedBy": [],
+    "duration": "",
+    "linkText": "View",
+    "_classes": "no-shadow",
+    "body": "<p>Introducing the open source, multi-device e-learning authoring tool</p>\n",
+    "displayTitle": "Adapt authoring tool",
+    "title": "Adapt authoring tool",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_showPageCompletion": true
+    }
+  }
+]

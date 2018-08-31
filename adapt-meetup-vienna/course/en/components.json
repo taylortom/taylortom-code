@@ -1,0 +1,576 @@
+ [
+  {
+    "_id": "5a0dacb27d600e7a807d27f9",
+    "_layout": "right",
+    "_type": "component",
+    "_parentId": "5a0da9e27d600e7a807d27f3",
+    "body": "",
+    "displayTitle": "",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "graphic",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/888b40eb6bc0f8dc373b7504e87b6af5a6edd797.jpeg",
+      "small": "course/en/assets/888b40eb6bc0f8dc373b7504e87b6af5a6edd797.jpeg",
+      "attribution": ""
+    }
+  },
+  {
+    "_id": "5a0b50129abbd30cbd307f5d",
+    "_layout": "right",
+    "_type": "component",
+    "_parentId": "5a0b50129abbd30cbd307f5b",
+    "body": "",
+    "displayTitle": "",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "graphic",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/5ec662fc01de849017ef2206ef1cc658c30552fe.jpeg",
+      "small": "course/en/assets/5ec662fc01de849017ef2206ef1cc658c30552fe.jpeg",
+      "attribution": ""
+    }
+  }, 
+  {
+    "_id": "5a0d8cb27d600e7a807d27c9",
+    "_layout": "right",
+    "_type": "component",
+    "_parentId": "5a0d8cb27d600e7a807d27c7",
+    "body": "",
+    "displayTitle": "",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "graphic",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/aa04d781d166ec01fc0c88eb3336a8c94a07a4c4.jpg",
+      "small": "course/en/assets/aa04d781d166ec01fc0c88eb3336a8c94a07a4c4.jpg",
+      "attribution": ""
+    }
+  },
+  {
+    "_id": "5a0cd3d79a9ead6c09da82c8",
+    "_layout": "full",
+    "_type": "component",
+    "_parentId": "5a0cd3ac9a9ead6c09da82c3",
+    "body": "",
+    "displayTitle": "Component title",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "blank",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    }
+  },
+  {
+    "_id": "5a0b50159abbd30cbd307f60",
+    "_layout": "left",
+    "_type": "component",
+    "_parentId": "5a0b50159abbd30cbd307f5f",
+    "body": "<p><strong>Roles:</strong></p>\n\n<ul>\n\t<li><strong>Kineo</strong>: Open-source Learning Technologies Developer</li>\n\t<li><strong>Adapt</strong>: authoring tool core&nbsp;developer</li>\n</ul>\n\n<p><strong>Contact</strong>:</p>\n\n<ul>\n\t<li><strong>Work</strong>: <a href=\"mailto:thomas.taylor@kineo.com\" target=\"_blank\">thomas.taylor@kineo.com</a></li>\n\t<li><strong>Personal</strong>: <a href=\"mailto:hello@tomtaylor.name\" target=\"_blank\">hello@tomtaylor.name</a></li>\n\t<li><strong>GitHub</strong>: <a href=\"https://github.com/taylortom\">taylortom</a></li>\n</ul>\n",
+    "displayTitle": "Tom Taylor",
+    "title": "Tom Taylor",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "text",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": ""
+  },
+  {
+    "_id": "5a0daaeb7d600e7a807d27f7",
+    "_layout": "left",
+    "_type": "component",
+    "_parentId": "5a0daaeb7d600e7a807d27f6",
+    "body": "<p><strong>You are</strong>: looking to create responsive elearning courses without any programming.</p>\n\n<p><strong>Skills required</strong>: None!</p>\n\n<p><strong>How to get started</strong></p>\n\n<ul>\n\t<li>Install the authoring tool and try it out!</li>\n\t<li>Have a look at the <strong>plugin browser </strong>and try some of the community plugins</li>\n</ul>\n\n<p><strong>Where to go for help</strong></p>\n\n<ul>\n\t<li>Responsive elearning forum</li>\n\t<li>Gitter/<strong>general_chat</strong></li>\n</ul>\n",
+    "displayTitle": "",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "text",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": ""
+  },
+  {
+    "_id": "5a0edb90efa76cd471934a4c",
+    "_layout": "full",
+    "_type": "component",
+    "_parentId": "5a0ed8b2efa76cd471934a4a",
+    "body": "",
+    "displayTitle": "",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "graphic",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/7b1cb3e2db2446d8fde35dad05f968b670781bbd.png",
+      "small": "course/en/assets/7b1cb3e2db2446d8fde35dad05f968b670781bbd.png",
+      "attribution": ""
+    }
+  },
+  {
+    "_id": "5a0cbf7c9a9ead6c09da829d",
+    "_layout": "right",
+    "_type": "component",
+    "_parentId": "5a0b50159abbd30cbd307f5f",
+    "body": "",
+    "displayTitle": "",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "graphic",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/af3e359dd86412f7c75d4603e3300f1ba035d476.jpg",
+      "small": "course/en/assets/af3e359dd86412f7c75d4603e3300f1ba035d476.jpg",
+      "attribution": ""
+    }
+  },
+  {
+    "_id": "5a0dad1b7d600e7a807d280a",
+    "_layout": "right",
+    "_type": "component",
+    "_parentId": "5a0daaeb7d600e7a807d27f6",
+    "body": "",
+    "displayTitle": "",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "graphic",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/d76f3652aa1c3fc5f358312992e2103c2f229548.jpeg",
+      "small": "course/en/assets/d76f3652aa1c3fc5f358312992e2103c2f229548.jpeg",
+      "attribution": ""
+    }
+  },
+  {
+    "_id": "5a0b50129abbd30cbd307f5c",
+    "_layout": "left",
+    "_type": "component",
+    "_parentId": "5a0b50129abbd30cbd307f5b",
+    "body": "<p>Main focuses for the next year:</p>\n\n<ul>\n\t<li>Course import</li>\n\t<li>Theming</li>\n\t<li>Tenant management</li>\n</ul>\n\n<p>&nbsp;</p>\n\n<ul>\n\t<li>Asset management rewrite</li>\n\t<li>Editor revamp</li>\n\t<li>Support for multiple framework versions</li>\n\t<li>Support for multi-language courses &amp; app localisation</li>\n</ul>\n",
+    "displayTitle": "Roadmap Meeting Q4 2017 (8/11/17)",
+    "title": "Roadmap Meeting Q4 2017 (8/11/17)",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "text",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": ""
+  },
+  {
+    "_id": "5a0efde7efa76cd471934a67",
+    "_layout": "left",
+    "_type": "component",
+    "_parentId": "5a0ec483efa76cd471934a46",
+    "body": "<p><strong>The core team:</strong> 7 regular contributors from 4 collaborating companies</p>\n\n<p><strong>Current vacancies(!):</strong></p>\n\n<p>Testing:</p>\n\n<ul>\n\t<li>User</li>\n\t<li>Automated</li>\n\t<li>Usability</li>\n</ul>\n\n<p>User-interface/user experience:</p>\n\n<ul>\n\t<li>Wireframeing/design</li>\n\t<li>Front-end development</li>\n</ul>\n\n<p>Documentation</p>\n",
+    "displayTitle": "",
+    "title": "Vacancies!",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "text",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": ""
+  },
+  {
+    "_id": "5a0ed8b2efa76cd471934a4b",
+    "_layout": "full",
+    "_type": "component",
+    "_parentId": "5a0c10509a9ead6c09da8268",
+    "body": "",
+    "displayTitle": "",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "typist",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "initialText": "Fast-forward to 2017",
+    "texts": [
+      "13 releases",
+      "2,452 git commits",
+      "600 files",
+      "24 contributors",
+      "1,473 issues closed",
+      "611 pull requests merged",
+      "132 GitHub forks"
+    ],
+    "loop": false,
+    "fontSize": "50"
+  },
+  {
+    "_id": "5a0c9b439a9ead6c09da8294",
+    "_layout": "left",
+    "_type": "component",
+    "_parentId": "5a0b90d19abbd30cbd307f67",
+    "body": "<ul>\n\t<li><strong>Work</strong>: <a href=\"mailto:thomas.taylor@kineo.com\" target=\"_blank\">thomas.taylor@kineo.com</a></li>\n\t<li><strong>Personal</strong>: <a href=\"mailto:hello@tomtaylor.name\" target=\"_blank\">hello@tomtaylor.name</a></li>\n\t<li><strong>GitHub</strong>: <a href=\"https://github.com/taylortom\">taylortom</a></li>\n</ul>\n\n<p>&nbsp;</p>\n\n<p>Presentation available at: <a href=\"http://code.tomtaylor.name/adapt-meetup-vienna\">code.tomtaylor.name/adapt-meetup-vienna</a>\n<a href=\"http://code.tomtaylor.name/adapt-meetup-vienna.zip\">code.tomtaylor.name/adapt-meetup-vienna.zip</a></p>\n",
+    "displayTitle": "Contact:",
+    "title": "Contact:",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "text",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": ""
+  },
+  {
+    "_id": "5a0c45609a9ead6c09da827b",
+    "_layout": "left",
+    "_type": "component",
+    "_parentId": "5a0c45609a9ead6c09da8277",
+    "body": "<p><strong>Elearning:</strong></p>\n\n<ul>\n\t<li>Flash-based</li>\n\t<li>Desktop-first</li>\n\t<li>Native apps/Adobe air apps</li>\n</ul>\n\n<p><strong>Authoring:</strong></p>\n\n<ul>\n\t<li>Expensive</li>\n\t<li>Monolithic</li>\n\t<li>Often desktop-based</li>\n\t<li>HTML5 publishing options becoming more common</li>\n\t<li><strong>Proprietary</strong></li>\n</ul>\n\n<p>&nbsp;</p>\n",
+    "displayTitle": "",
+    "title": "Elearning",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "text",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": ""
+  },
+  {
+    "_id": "5a0c9d3f9a9ead6c09da8295",
+    "_layout": "right",
+    "_type": "component",
+    "_parentId": "5a0b90d19abbd30cbd307f67",
+    "body": "",
+    "displayTitle": "",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "graphic",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/8f73f589fa82d10a1d3e8229cfc9ab301f2ec041.jpg",
+      "small": "course/en/assets/8f73f589fa82d10a1d3e8229cfc9ab301f2ec041.jpg",
+      "attribution": ""
+    }
+  },
+  {
+    "_id": "5a0d8cb27d600e7a807d27c8",
+    "_layout": "left",
+    "_type": "component",
+    "_parentId": "5a0d8cb27d600e7a807d27c7",
+    "body": "<p><strong>Try it out!</strong></p>\n\n<ul>\n\t<li>Duh!</li>\n</ul>\n\n<p><strong>Join the conversation</strong></p>\n\n<ul>\n\t<li>Community forums</li>\n\t<li>Gitter</li>\n</ul>\n\n<p><strong>Contribute</strong></p>\n\n<ul>\n\t<li>Pick up some work/request issues: github</li>\n\t<li>Speak to one of the core team for non-coding tasks</li>\n</ul>\n",
+    "displayTitle": "",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "text",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": ""
+  },
+  {
+    "_id": "5a0cc2b79a9ead6c09da82a3",
+    "_layout": "left",
+    "_type": "component",
+    "_parentId": "5a0cc2b79a9ead6c09da82a1",
+    "body": "<ul>\n\t<li>Evolve</li>\n\t<li>Elucidat</li>\n\t<li>Gomo</li>\n\t<li>Storyline</li>\n\t<li>Captivate</li>\n\t<li>... and many more</li>\n</ul>\n\n<p><strong>But none of them free and open-source!</strong></p>\n\n<ul>\n</ul>\n",
+    "displayTitle": "",
+    "title": "Text",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "text",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": ""
+  },
+  {
+    "_id": "5a11fff9331cb69b3a071148",
+    "_layout": "right",
+    "_type": "component",
+    "_parentId": "5a0f075bdc1d45dbbdb9fc1a",
+    "body": "<ul>\n\t<li>Adjust themes directly in the editor, no coding necessary (colours, fonts, paddings, etc.)</li>\n</ul>\n\n<p>&nbsp;</p>\n\n<ul>\n\t<li>Apply settings to specific content (i.e. pages/articles/blocks/components)</li>\n</ul>\n\n<p>&nbsp;</p>\n\n<ul>\n\t<li>Save &#39;presets&#39; of settings for reuse in other courses</li>\n</ul>\n",
+    "displayTitle": "Theme editor",
+    "title": "Theme editor",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "text",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": ""
+  },
+  {
+    "_id": "5a11c805331cb69b3a071137",
+    "_layout": "right",
+    "_type": "component",
+    "_parentId": "5a0c45609a9ead6c09da8277",
+    "body": "",
+    "displayTitle": "",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "graphic",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/2510eb07b28b2c8dc363795b4e0992bac0f587f8.jpg",
+      "small": "course/en/assets/2510eb07b28b2c8dc363795b4e0992bac0f587f8.jpg",
+      "attribution": ""
+    }
+  },
+  {
+    "_id": "5a0cc4a09a9ead6c09da82ad",
+    "_layout": "left",
+    "_type": "component",
+    "_parentId": "5a0cc4a09a9ead6c09da82ac",
+    "body": "<p style=\"text-align:left\"><strong>Our project aims:</strong></p>\n\n<ul>\n\t<li style=\"text-align:left\"><span style=\"color:#4D4D4D\">Market disruption</span></li>\n\t<li style=\"text-align:left\"><span style=\"color:#4D4D4D\">Open collaboration</span></li>\n\t<li style=\"text-align:left\"><span style=\"color:#4D4D4D\">Technology no longer the differentiator</span></li>\n</ul>\n\n<p><strong>Our authoring tool:</strong></p>\n\n<ul dir=\"ltr\">\n\t<li>Modern technology stack (MEBN)</li>\n\t<li><span style=\"color:#4D4D4D\">Browser-based web app, no user installs</span></li>\n\t<li style=\"text-align:left\"><span style=\"color:#4D4D4D\">Multi-tenanted: single installation, many clients</span></li>\n\t<li style=\"text-align:left\"><strong><span style=\"color:#4D4D4D\">FREE AND OPEN-SOURCE</span></strong></li>\n</ul>\n",
+    "displayTitle": "",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "text",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": ""
+  },
+  {
+    "_id": "5a0cc94f9a9ead6c09da82bc",
+    "_layout": "right",
+    "_type": "component",
+    "_parentId": "5a0cc4a09a9ead6c09da82ac",
+    "body": "",
+    "displayTitle": "",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "graphic",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/4a792a70d19ed14054820030b25109a0e244b13e.jpg",
+      "small": "course/en/assets/4a792a70d19ed14054820030b25109a0e244b13e.jpg",
+      "attribution": ""
+    }
+  },
+  {
+    "_id": "5a0b90a19abbd30cbd307f66",
+    "_layout": "full",
+    "_type": "component",
+    "_parentId": "5a0b84829abbd30cbd307f65",
+    "body": "<p><strong>Adapt authoring tool features:</strong></p>\n\n<ul>\n\t<li>13 releases</li>\n\t<li><span>Uses the latest Adapt framework v2.x</span></li>\n\t<li>No programming required</li>\n\t<li>One source: a single responsive HTML5 course supports all of your devices</li>\n\t<li>Extend your courses with both core and third-party plugins</li>\n\t<li>Easily integrate your courses with your existing LMS with support for SCORM and xAPI</li>\n\t<li>Export your course source code for standalone command-line development</li>\n\t<li>Full user management, so you can develop and share courses with your team</li>\n\t<li>Manage your asset library in the with search and tagging</li>\n</ul>\n",
+    "displayTitle": "",
+    "title": "Features",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "text",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": ""
+  },
+  {
+    "_id": "5a0daa1d7d600e7a807d27f4",
+    "_layout": "left",
+    "_type": "component",
+    "_parentId": "5a0da9e27d600e7a807d27f3",
+    "body": "<p><strong>You are:</strong> looking to extend the existing Adapt feature-set.</p>\n\n<p><strong>Skills required</strong>: HTML5/Handlebars, CSS/LESS, JavaScript (Node.js)</p>\n\n<p><strong>How to get started</strong></p>\n\n<ul>\n\t<li>Extend an existing plugin</li>\n\t<li>Create a theme</li>\n\t<li>Pick up a GitHub issue labelled: <strong>D: beginner</strong></li>\n</ul>\n\n<p><strong>Where to go for help</strong></p>\n\n<ul>\n\t<li>Technical forum</li>\n\t<li>Gitter/<strong>adapt_authoring</strong></li>\n</ul>\n",
+    "displayTitle": "",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "text",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": ""
+  },
+  {
+    "_id": "5a0ef59defa76cd471934a56",
+    "_layout": "right",
+    "_type": "component",
+    "_parentId": "5a0cc2b79a9ead6c09da82a1",
+    "body": "",
+    "displayTitle": "",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "graphic",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/34274ff8ebdda9f5a709e7579bc7de75cae1dda8.jpg",
+      "small": "course/en/assets/34274ff8ebdda9f5a709e7579bc7de75cae1dda8.jpg",
+      "attribution": ""
+    }
+  },
+  {
+    "_id": "5a0f075cdc1d45dbbdb9fc2a",
+    "_layout": "left",
+    "_type": "component",
+    "_parentId": "5a0f075bdc1d45dbbdb9fc1a",
+    "body": "<p>Complete separation of content for different groups of users:</p>\n\n<ul>\n\t<li>Courses</li>\n\t<li>Assets</li>\n\t<li>Plugins still shared</li>\n</ul>\n\n<p>Area to administer tenants:</p>\n\n<ul>\n\t<li>Create</li>\n\t<li>Update</li>\n\t<li>Delete</li>\n</ul>\n",
+    "displayTitle": "Tenant management",
+    "title": "Tenant management",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "text",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": ""
+  },
+  {
+    "_id": "5a0ec483efa76cd471934a47",
+    "_layout": "right",
+    "_type": "component",
+    "_parentId": "5a0ec483efa76cd471934a46",
+    "body": "<p><strong>How we work:</strong></p>\n\n<ul>\n\t<li>(Almost) quarterly roadmap meetings</li>\n\t<li>Weekly development stand-ups</li>\n\t<li>Post-release retrospectives</li>\n\t<li>Developer chat in the open on Gitter in the <strong>adapt_authoring</strong> room</li>\n</ul>\n\n<p><strong>You can expect:</strong></p>\n\n<ul>\n\t<li>Assigned mentor/point of contact for one-to-one support and regular feedback</li>\n\t<li>Specific tasks suitable for your skillset/experience/confidence</li>\n\t<li>Code reviews by the team</li>\n</ul>\n",
+    "displayTitle": "",
+    "title": "The core team",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "text",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": ""
+  },
+  {
+    "_id": "5a11c657331cb69b3a071125",
+    "_layout": "full",
+    "_type": "component",
+    "_parentId": "5a0f077cdc1d45dbbdb9fc2c",
+    "body": "",
+    "displayTitle": "",
+    "title": "Component title",
+    "_isAvailable": true,
+    "_isOptional": false,
+    "_classes": "",
+    "_component": "narrative",
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    },
+    "instruction": "",
+    "mobileInstruction": "",
+    "_hasNavigationInTextArea": true,
+    "_setCompletionOn": "inview",
+    "_items": [
+      {
+        "title": "Theme select",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/d13f792f2fb158b00e7a2d6467b760e1572c02f1.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": "Theme select"
+      },
+      {
+        "title": "Course theme settings",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/0051dab91f1bdb6b79af33b23f0a670cc4656007.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": "Course theme settings"
+      },
+      {
+        "title": "Colour picker",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/ca4937c770dc2f3be485c4818635efddca0ac432.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": "Colour picker"
+      },
+      {
+        "title": "Theme presets",
+        "body": "",
+        "_graphic": {
+          "src": "course/en/assets/3ccb5012010659c0bc6cb41a0adc355030e87f1d.png",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": "Theme presets"
+      }
+    ]
+  }
+]
