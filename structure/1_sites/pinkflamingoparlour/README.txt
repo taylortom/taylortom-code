@@ -1,1 +1,0 @@
-Simple responsive nameplate site for Pink Flamingo Parlour ice creams.

@@ -1,1 +1,0 @@
-Customised Wordpress site for The Tshirt Company.
