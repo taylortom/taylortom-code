@@ -1,0 +1,2160 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "name": "node_modules/adapt-authoring-core/index.js",
+    "content": "import App from './lib/app';\nimport Module from './lib/module';\n\nmodule.exports = {\n  App,\n  Module\n};\n",
+    "static": true,
+    "longname": "/Users/tom/Projects/adapt_authoring/node_modules/adapt-authoring-core/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 1,
+    "kind": "file",
+    "name": "node_modules/adapt-authoring-core/lib/app.js",
+    "content": "import Module from'./module';\nimport ModuleLoader from './moduleloader';\nimport path from 'path';\n// NOTE this uses the package.json in the process root\nconst modules = require(path.join(process.cwd(), 'package.json')).dependencies;\n\n/**\n * The main application class\n */\nexport default class App extends Module {\n  /**\n  * Initialises the application\n  * @return {Promise}\n  */\n  initialise() {\n    /**\n    * Reference to the ModuleLoader instance.\n    * @type {ModuleLoader}\n    */\n    this.moduleloader = new ModuleLoader(modules, this);\n    return new Promise((resolve, reject) => {\n      this.moduleloader.initialiseModules().then(resolve).catch(reject);\n    });\n  }\n\n  preload(app, resolve, reject) {\n    this.moduleloader.preloadModules().then(resolve).catch(reject);\n  }\n\n  boot(app, resolve, reject) {\n    this.moduleloader.bootModules().then(resolve).catch(reject);\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/tom/Projects/adapt_authoring/node_modules/adapt-authoring-core/lib/app.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 2,
+    "kind": "variable",
+    "name": "modules",
+    "memberof": "node_modules/adapt-authoring-core/lib/app.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-core/lib/app.js~modules",
+    "access": "public",
+    "export": false,
+    "importPath": "adapt-authoring-core/lib/app.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "class",
+    "name": "App",
+    "memberof": "node_modules/adapt-authoring-core/lib/app.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-core/lib/app.js~App",
+    "access": "public",
+    "export": true,
+    "importPath": "adapt-authoring-core/lib/app.js",
+    "importStyle": "App",
+    "description": "The main application class",
+    "lineNumber": 10,
+    "interface": false,
+    "extends": [
+      "node_modules/adapt-authoring-core/lib/module.js~Module"
+    ]
+  },
+  {
+    "__docId__": 4,
+    "kind": "method",
+    "name": "initialise",
+    "memberof": "node_modules/adapt-authoring-core/lib/app.js~App",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/app.js~App#initialise",
+    "access": "public",
+    "description": "Initialises the application",
+    "lineNumber": 15,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 5,
+    "kind": "member",
+    "name": "moduleloader",
+    "memberof": "node_modules/adapt-authoring-core/lib/app.js~App",
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/app.js~App#moduleloader",
+    "access": "public",
+    "description": "Reference to the ModuleLoader instance.",
+    "lineNumber": 20,
+    "type": {
+      "nullable": null,
+      "types": [
+        "ModuleLoader"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 6,
+    "kind": "method",
+    "name": "preload",
+    "memberof": "node_modules/adapt-authoring-core/lib/app.js~App",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/app.js~App#preload",
+    "access": "public",
+    "description": null,
+    "lineNumber": 26,
+    "undocument": true,
+    "params": [
+      {
+        "name": "app",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "resolve",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "reject",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 7,
+    "kind": "method",
+    "name": "boot",
+    "memberof": "node_modules/adapt-authoring-core/lib/app.js~App",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/app.js~App#boot",
+    "access": "public",
+    "description": null,
+    "lineNumber": 30,
+    "undocument": true,
+    "params": [
+      {
+        "name": "app",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "resolve",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "reject",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 8,
+    "kind": "file",
+    "name": "node_modules/adapt-authoring-core/lib/module.js",
+    "content": "import EventEmitter from 'events';\n\n/**\n * Abstract class for authoring tool modules\n */\nexport default class Module extends EventEmitter {\n  /**\n  * @constructor\n  * @param {Object} app Reference to the main application\n  * @param {Object} config Config object from package.json for this module\n  */\n  constructor(app, config) {\n    super();\n    /**\n    * Whether the Module has been preloaded\n    * @type {Boolean}\n    */\n    this.hasPreloaded = false;\n    /**\n    * Whether the Module has been booted\n    * @type {Boolean}\n    */\n    this.hasBooted = false;\n    \n    Object.defineProperty(this, 'pkgConfig', {\n      get: () => { return config; }\n    });\n  }\n\n  /**\n  * Getter function to return module name (inferred from Class name)\n  * @return {String} Name of module\n  */\n  get name() {\n    return this.constructor.name;\n  }\n\n  /**\n  * Function to call any actions required to preload the module. Will be passed as a promise executor to preloadDelegate\n  * @param {Object} app reference to the main app\n  * @param {Function} resolve resolves the promise\n  * @param {Function} reject rejects the promise\n  */\n  preload(app, resolve, reject) {\n    resolve();\n  }\n  /**\n  * Preloads the module. Acts as a wrapper function to preload.\n  * @param {Object} app reference to the main app\n  * @return {Promise}\n  */\n  preloadDelegate(app) {\n    return new Promise((resolve, reject) => {\n      this.preload.call(this, app, resolve, reject);\n    }).then(() => {\n      this.hasPreloaded = true;\n      this.emit('preloaded');\n    });\n  }\n\n  /**\n  * Function to call any actions required to start the module. Will be passed as a promise executor to preloadDelegate\n  * @param {Object} app reference to the main app\n  * @param {Function} resolve resolves the promise\n  * @param {Function} reject rejects the promise\n  */\n  boot(app, resolve, reject) {\n    resolve();\n  }\n  /**\n  * Boots the module. Acts as a wrapper function to boot.\n  * @param {Object} app reference to the main app\n  * @return {Promise}\n  */\n  bootDelegate(app) {\n    return new Promise((resolve, reject) => {\n      this.boot.call(this, app, resolve, reject);\n    }).then(() => {\n      this.hasBooted = true;\n      this.emit('booted');\n    });\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/tom/Projects/adapt_authoring/node_modules/adapt-authoring-core/lib/module.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 9,
+    "kind": "class",
+    "name": "Module",
+    "memberof": "node_modules/adapt-authoring-core/lib/module.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-core/lib/module.js~Module",
+    "access": "public",
+    "export": true,
+    "importPath": "adapt-authoring-core/lib/module.js",
+    "importStyle": "Module",
+    "description": "Abstract class for authoring tool modules",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "events~EventEmitter"
+    ]
+  },
+  {
+    "__docId__": 10,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "node_modules/adapt-authoring-core/lib/module.js~Module",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/module.js~Module#constructor",
+    "access": "public",
+    "description": "",
+    "lineNumber": 12,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "app",
+        "description": "Reference to the main application"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "config",
+        "description": "Config object from package.json for this module"
+      }
+    ]
+  },
+  {
+    "__docId__": 11,
+    "kind": "member",
+    "name": "hasPreloaded",
+    "memberof": "node_modules/adapt-authoring-core/lib/module.js~Module",
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/module.js~Module#hasPreloaded",
+    "access": "public",
+    "description": "Whether the Module has been preloaded",
+    "lineNumber": 18,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 12,
+    "kind": "member",
+    "name": "hasBooted",
+    "memberof": "node_modules/adapt-authoring-core/lib/module.js~Module",
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/module.js~Module#hasBooted",
+    "access": "public",
+    "description": "Whether the Module has been booted",
+    "lineNumber": 23,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 13,
+    "kind": "get",
+    "name": "name",
+    "memberof": "node_modules/adapt-authoring-core/lib/module.js~Module",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/module.js~Module#name",
+    "access": "public",
+    "description": "Getter function to return module name (inferred from Class name)",
+    "lineNumber": 34,
+    "return": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": "Name of module"
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 14,
+    "kind": "method",
+    "name": "preload",
+    "memberof": "node_modules/adapt-authoring-core/lib/module.js~Module",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/module.js~Module#preload",
+    "access": "public",
+    "description": "Function to call any actions required to preload the module. Will be passed as a promise executor to preloadDelegate",
+    "lineNumber": 44,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "app",
+        "description": "reference to the main app"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "resolve",
+        "description": "resolves the promise"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "reject",
+        "description": "rejects the promise"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 15,
+    "kind": "method",
+    "name": "preloadDelegate",
+    "memberof": "node_modules/adapt-authoring-core/lib/module.js~Module",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/module.js~Module#preloadDelegate",
+    "access": "public",
+    "description": "Preloads the module. Acts as a wrapper function to preload.",
+    "lineNumber": 52,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "app",
+        "description": "reference to the main app"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 17,
+    "kind": "method",
+    "name": "boot",
+    "memberof": "node_modules/adapt-authoring-core/lib/module.js~Module",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/module.js~Module#boot",
+    "access": "public",
+    "description": "Function to call any actions required to start the module. Will be passed as a promise executor to preloadDelegate",
+    "lineNumber": 67,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "app",
+        "description": "reference to the main app"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "resolve",
+        "description": "resolves the promise"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "reject",
+        "description": "rejects the promise"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 18,
+    "kind": "method",
+    "name": "bootDelegate",
+    "memberof": "node_modules/adapt-authoring-core/lib/module.js~Module",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/module.js~Module#bootDelegate",
+    "access": "public",
+    "description": "Boots the module. Acts as a wrapper function to boot.",
+    "lineNumber": 75,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "app",
+        "description": "reference to the main app"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 20,
+    "kind": "file",
+    "name": "node_modules/adapt-authoring-core/lib/moduleloader.js",
+    "content": "import path from 'path';\n/**\n* Handles the loading of Adapt authoring tool module dependencies.\n*/\nexport default class ModuleLoader {\n  /**\n  * @constructor\n  * @param {Object} dependencies List of module dependencies (in package.json format)\n  * @param {Object} app Used to store module references\n  */\n  constructor(dependencies, app) {\n    /**\n    * List of dependent modules in NPM package.json dependencies format\n    * @type {object}\n    */\n    this.dependencies = dependencies;\n    /**\n    * Reference to the main app\n    * @type {App}\n    */\n    this.app = app;\n    /**\n    * List of module instances\n    * @type {Module[]}\n    */\n    this.modules = [];\n  }\n  /**\n  * Initialises all defined dependent modules\n  * @return {Promise}\n  */\n  initialiseModules() {\n    return new Promise((resolve, reject) => {\n      Promise.all(Object.keys(this.dependencies).map(this.initialiseModule.bind(this)))\n        .then(resolve).catch(reject);\n    });\n  }\n  /**\n  * Initialises a single module\n  * @param {Object} moduleName Name of the module to initialise\n  * @return {Promise}\n  */\n  initialiseModule(moduleName) {\n    return new Promise((resolve, reject) => {\n      const pkgDir = path.join(process.cwd(), 'node_modules', moduleName, 'package.json');\n      // First check it's a valid authoring tool module using package.json\n      try {\n        var moduleConfig = require(pkgDir).adapt_authoring;\n        if(!moduleConfig.module) return resolve();\n      } catch(e) {\n        return resolve();\n      }\n      // now try and import the module, and make sure it provides a function export\n      try {\n        var ModClass = require(moduleName);\n\n        if(typeof ModClass !== 'function') {\n          console.warn(`'${moduleName}' is not a valid module`);\n          return resolve();\n        }\n        var instance = new ModClass(this.app, moduleConfig);\n\n      } catch(e) {\n        console.log(`Failed to load '${moduleName}', ${e}`);\n        resolve();\n      }\n      // store any modules that get this far and include in the preload/boot process\n      this.modules.push(instance);\n      resolve();\n    });\n  }\n  /**\n  * Preloads all defined dependent modules\n  * @return {Promise}\n  */\n  preloadModules() {\n    return this.callFunctionOnModules('preloadDelegate');\n  }\n  /**\n  * Boots all defined dependent modules\n  * @return {Promise}\n  */\n  bootModules() {\n    return this.callFunctionOnModules('bootDelegate');\n  }\n\n  /**\n  * @ignore\n  * Asynchronously calls a function on all this.modules\n  */\n  callFunctionOnModules(funcName) {\n    return new Promise((resolve, reject) => {\n      Promise.all(this.modules.map(instance => {\n        return new Promise((nestResolve, nestReject) => {\n          if(!instance[funcName]) return nestResolve();\n          instance[funcName](this.app).then(nestResolve).catch(nestReject);\n        });\n      })).then(resolve).catch(reject);\n    });\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/tom/Projects/adapt_authoring/node_modules/adapt-authoring-core/lib/moduleloader.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 21,
+    "kind": "class",
+    "name": "ModuleLoader",
+    "memberof": "node_modules/adapt-authoring-core/lib/moduleloader.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader",
+    "access": "public",
+    "export": true,
+    "importPath": "adapt-authoring-core/lib/moduleloader.js",
+    "importStyle": "ModuleLoader",
+    "description": "Handles the loading of Adapt authoring tool module dependencies.",
+    "lineNumber": 5,
+    "interface": false
+  },
+  {
+    "__docId__": 22,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader#constructor",
+    "access": "public",
+    "description": "",
+    "lineNumber": 11,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "dependencies",
+        "description": "List of module dependencies (in package.json format)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "app",
+        "description": "Used to store module references"
+      }
+    ]
+  },
+  {
+    "__docId__": 23,
+    "kind": "member",
+    "name": "dependencies",
+    "memberof": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader",
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader#dependencies",
+    "access": "public",
+    "description": "List of dependent modules in NPM package.json dependencies format",
+    "lineNumber": 16,
+    "type": {
+      "nullable": null,
+      "types": [
+        "object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 24,
+    "kind": "member",
+    "name": "app",
+    "memberof": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader",
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader#app",
+    "access": "public",
+    "description": "Reference to the main app",
+    "lineNumber": 21,
+    "type": {
+      "nullable": null,
+      "types": [
+        "App"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 25,
+    "kind": "member",
+    "name": "modules",
+    "memberof": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader",
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader#modules",
+    "access": "public",
+    "description": "List of module instances",
+    "lineNumber": 26,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Module[]"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 26,
+    "kind": "method",
+    "name": "initialiseModules",
+    "memberof": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader#initialiseModules",
+    "access": "public",
+    "description": "Initialises all defined dependent modules",
+    "lineNumber": 32,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 27,
+    "kind": "method",
+    "name": "initialiseModule",
+    "memberof": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader#initialiseModule",
+    "access": "public",
+    "description": "Initialises a single module",
+    "lineNumber": 43,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "moduleName",
+        "description": "Name of the module to initialise"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 28,
+    "kind": "method",
+    "name": "preloadModules",
+    "memberof": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader#preloadModules",
+    "access": "public",
+    "description": "Preloads all defined dependent modules",
+    "lineNumber": 76,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 29,
+    "kind": "method",
+    "name": "bootModules",
+    "memberof": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader#bootModules",
+    "access": "public",
+    "description": "Boots all defined dependent modules",
+    "lineNumber": 83,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 30,
+    "kind": "method",
+    "name": "callFunctionOnModules",
+    "memberof": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/moduleloader.js~ModuleLoader#callFunctionOnModules",
+    "access": "public",
+    "description": "",
+    "lineNumber": 91,
+    "ignore": true,
+    "params": [
+      {
+        "name": "funcName",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 31,
+    "kind": "file",
+    "name": "node_modules/adapt-authoring-core/lib/rest.js",
+    "content": "/**\n * Abstract class for REST functionality\n */\nexport default class REST {\n  /**\n  * @constructor\n  */\n  constructor() {\n\n  }\n\n  get() {\n\n  }\n\n  post() {\n\n  }\n\n  put() {\n\n  }\n\n  delete() {\n\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/tom/Projects/adapt_authoring/node_modules/adapt-authoring-core/lib/rest.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 32,
+    "kind": "class",
+    "name": "REST",
+    "memberof": "node_modules/adapt-authoring-core/lib/rest.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-core/lib/rest.js~REST",
+    "access": "public",
+    "export": true,
+    "importPath": "adapt-authoring-core/lib/rest.js",
+    "importStyle": "REST",
+    "description": "Abstract class for REST functionality",
+    "lineNumber": 4,
+    "interface": false
+  },
+  {
+    "__docId__": 33,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "node_modules/adapt-authoring-core/lib/rest.js~REST",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/rest.js~REST#constructor",
+    "access": "public",
+    "description": "",
+    "lineNumber": 8,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 34,
+    "kind": "method",
+    "name": "get",
+    "memberof": "node_modules/adapt-authoring-core/lib/rest.js~REST",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/rest.js~REST#get",
+    "access": "public",
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 35,
+    "kind": "method",
+    "name": "post",
+    "memberof": "node_modules/adapt-authoring-core/lib/rest.js~REST",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/rest.js~REST#post",
+    "access": "public",
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 36,
+    "kind": "method",
+    "name": "put",
+    "memberof": "node_modules/adapt-authoring-core/lib/rest.js~REST",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/rest.js~REST#put",
+    "access": "public",
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 37,
+    "kind": "method",
+    "name": "delete",
+    "memberof": "node_modules/adapt-authoring-core/lib/rest.js~REST",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-core/lib/rest.js~REST#delete",
+    "access": "public",
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 38,
+    "kind": "file",
+    "name": "node_modules/adapt-authoring-helloworld/index.js",
+    "content": "const helloworld = require('./lib/helloworld');\nmodule.exports = helloworld;\n",
+    "static": true,
+    "longname": "/Users/tom/Projects/adapt_authoring/node_modules/adapt-authoring-helloworld/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 39,
+    "kind": "variable",
+    "name": "helloworld",
+    "memberof": "node_modules/adapt-authoring-helloworld/index.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-helloworld/index.js~helloworld",
+    "access": "public",
+    "export": false,
+    "importPath": "adapt-authoring-helloworld/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "file",
+    "name": "node_modules/adapt-authoring-helloworld/lib/helloworld.js",
+    "content": "import DataTypes from 'adapt-authoring-core';\nconst {Module} = DataTypes;\n/**\n* An example authoring tool plugin. Exposes a 'helloworld' API route.\n*/\nexport class HelloWorld extends Module {\n  /**\n  * Creates the custom router\n  */\n  preload(app, resolve, reject) {\n    if(!app.server) {\n      console.warn(`${this.name}: Cannot initialise, server isn't running`);\n      resolve();\n    }\n    /**\n    * Instance of the Express server\n    * @type {Server}\n    */\n    this.server = app.server;\n\n    this.server.createRouter('/helloworld')\n      .use((req, res, next) => {\n        console.log('Hello world middleware');\n        next();\n      })\n      .get('/', (req, res) => res.send('Hello World!'));\n\n    resolve();\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/tom/Projects/adapt_authoring/node_modules/adapt-authoring-helloworld/lib/helloworld.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 41,
+    "kind": "variable",
+    "name": "Module",
+    "memberof": "node_modules/adapt-authoring-helloworld/lib/helloworld.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-helloworld/lib/helloworld.js~Module",
+    "access": "public",
+    "export": false,
+    "importPath": "adapt-authoring-helloworld/lib/helloworld.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "class",
+    "name": "HelloWorld",
+    "memberof": "node_modules/adapt-authoring-helloworld/lib/helloworld.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-helloworld/lib/helloworld.js~HelloWorld",
+    "access": "public",
+    "export": true,
+    "importPath": "adapt-authoring-helloworld/lib/helloworld.js",
+    "importStyle": "{HelloWorld}",
+    "description": "An example authoring tool plugin. Exposes a 'helloworld' API route.",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "Module"
+    ]
+  },
+  {
+    "__docId__": 43,
+    "kind": "method",
+    "name": "preload",
+    "memberof": "node_modules/adapt-authoring-helloworld/lib/helloworld.js~HelloWorld",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-helloworld/lib/helloworld.js~HelloWorld#preload",
+    "access": "public",
+    "description": "Creates the custom router",
+    "lineNumber": 10,
+    "params": [
+      {
+        "name": "app",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "resolve",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "reject",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 44,
+    "kind": "member",
+    "name": "server",
+    "memberof": "node_modules/adapt-authoring-helloworld/lib/helloworld.js~HelloWorld",
+    "static": false,
+    "longname": "node_modules/adapt-authoring-helloworld/lib/helloworld.js~HelloWorld#server",
+    "access": "public",
+    "description": "Instance of the Express server",
+    "lineNumber": 19,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Server"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 45,
+    "kind": "file",
+    "name": "node_modules/adapt-authoring-logger/index.js",
+    "content": "const Logger = require('./lib/logger');\nmodule.exports = Logger;\n",
+    "static": true,
+    "longname": "/Users/tom/Projects/adapt_authoring/node_modules/adapt-authoring-logger/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 46,
+    "kind": "variable",
+    "name": "Logger",
+    "memberof": "node_modules/adapt-authoring-logger/index.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-logger/index.js~Logger",
+    "access": "public",
+    "export": false,
+    "importPath": "adapt-authoring-logger/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "file",
+    "name": "node_modules/adapt-authoring-logger/lib/logger.js",
+    "content": "import {DataTypes} from 'adapt-authoring-core';\nimport chalk from 'chalk';\nconst {Module} = Datatypes;\n\n/**\n* Simple logging library\n*/\nexport class Logger extends Module {\n  /**\n  * Logs a message to the console\n  * @param {string} type The type of log. Accepts: warn, error, log.\n  * @param {*} msg The message to log\n  * @param {*} args Any other arguments\n  */\n  log(type, msg, ...args) {\n    var type = colourise(type.toUpperCase(), type);\n    var timestamp = (new Date()).toISOString();\n    console.log(`${type} [${timestamp}]: ${msg}`);\n  }\n}\nconst COLOUR_MAP = {\n  warn: chalk.yellow,\n  error: chalk.red\n};\n\nfunction colourise(str, type) {\n  const func = COLOUR_MAP[type];\n  if(!func) return str;\n  return func(str);\n}\n",
+    "static": true,
+    "longname": "/Users/tom/Projects/adapt_authoring/node_modules/adapt-authoring-logger/lib/logger.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 48,
+    "kind": "variable",
+    "name": "Module",
+    "memberof": "node_modules/adapt-authoring-logger/lib/logger.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-logger/lib/logger.js~Module",
+    "access": "public",
+    "export": false,
+    "importPath": "adapt-authoring-logger/lib/logger.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 49,
+    "kind": "class",
+    "name": "Logger",
+    "memberof": "node_modules/adapt-authoring-logger/lib/logger.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-logger/lib/logger.js~Logger",
+    "access": "public",
+    "export": true,
+    "importPath": "adapt-authoring-logger/lib/logger.js",
+    "importStyle": "{Logger}",
+    "description": "Simple logging library",
+    "lineNumber": 8,
+    "interface": false,
+    "extends": [
+      "Module"
+    ]
+  },
+  {
+    "__docId__": 50,
+    "kind": "method",
+    "name": "log",
+    "memberof": "node_modules/adapt-authoring-logger/lib/logger.js~Logger",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-logger/lib/logger.js~Logger#log",
+    "access": "public",
+    "description": "Logs a message to the console",
+    "lineNumber": 15,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "The type of log. Accepts: warn, error, log."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "msg",
+        "description": "The message to log"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "args",
+        "description": "Any other arguments"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 51,
+    "kind": "variable",
+    "name": "COLOUR_MAP",
+    "memberof": "node_modules/adapt-authoring-logger/lib/logger.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-logger/lib/logger.js~COLOUR_MAP",
+    "access": "public",
+    "export": false,
+    "importPath": "adapt-authoring-logger/lib/logger.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 21,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"warn\": *, \"error\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 52,
+    "kind": "function",
+    "name": "colourise",
+    "memberof": "node_modules/adapt-authoring-logger/lib/logger.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "node_modules/adapt-authoring-logger/lib/logger.js~colourise",
+    "access": "public",
+    "export": false,
+    "importPath": "adapt-authoring-logger/lib/logger.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 26,
+    "undocument": true,
+    "params": [
+      {
+        "name": "str",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "type",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "file",
+    "name": "node_modules/adapt-authoring-server/index.js",
+    "content": "const server = require('./lib/server');\nmodule.exports = server;\n",
+    "static": true,
+    "longname": "/Users/tom/Projects/adapt_authoring/node_modules/adapt-authoring-server/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 54,
+    "kind": "variable",
+    "name": "server",
+    "memberof": "node_modules/adapt-authoring-server/index.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-server/index.js~server",
+    "access": "public",
+    "export": false,
+    "importPath": "adapt-authoring-server/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 55,
+    "kind": "file",
+    "name": "node_modules/adapt-authoring-server/lib/middleware.js",
+    "content": "/**\n* List functions to be used as Express middleware\n* @type {function[]}\n*/\nexport const middleware = [\n  (req, res, next) => {\n    console.log('Server: example express middleware');\n    next();\n  }\n];\n",
+    "static": true,
+    "longname": "/Users/tom/Projects/adapt_authoring/node_modules/adapt-authoring-server/lib/middleware.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 56,
+    "kind": "variable",
+    "name": "middleware",
+    "memberof": "node_modules/adapt-authoring-server/lib/middleware.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-server/lib/middleware.js~middleware",
+    "access": "public",
+    "export": true,
+    "importPath": "adapt-authoring-server/lib/middleware.js",
+    "importStyle": "{middleware}",
+    "description": "List functions to be used as Express middleware",
+    "lineNumber": 5,
+    "type": {
+      "nullable": null,
+      "types": [
+        "function[]"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "file",
+    "name": "node_modules/adapt-authoring-server/lib/server.js",
+    "content": "import {DataTypes} from 'adapt-authoring-core';\nimport express from 'express';\nimport middleware from './middleware';\nconst {Module} = Datatypes;\n\nconst PORT = 5000;\n\n/**\n* Adds an Express server to the authoring tool\n*/\nexport class Server extends Module {\n  /**\n  * @constructor\n  * @param {App} app The main application instance\n  */\n  constructor(app) {\n    super();\n    this.__middleware = [];\n    this.__routers = [];\n    // create server application\n    const expressApp = express();\n    /**\n    * Add middleware to the Express server stack (shortcut to the Express function of the same name).\n    * @see https://expressjs.com/en/4x/api.html#app.use\n    * @param {express.Router} router A Router instance\n    */\n    this.use = expressApp.use.bind(expressApp);\n    /**\n    * Start the Express server (shortcut to the Express function of the same name).\n    * @see https://expressjs.com/en/4x/api.html#app.listen\n    * @param {number} port The port to listen on.\n    * @param {function} func Callback function to be called on connection.\n    */\n    this.listen = expressApp.listen.bind(expressApp);\n    // store a reference on the main app\n    app.server = this;\n  }\n  /**\n  * Adds middleware to the main server. You should call this function prior to server boot (i.e. during preload), so you can be sure your middleware runs before any queued routers.\n  * @param {function} func Callback function to be called on request.\n  * @see https://expressjs.com/en/guide/writing-middleware.html\n  */\n  addMiddleware(func) {\n    this.__middleware.push(func);\n    if(this.hasBooted) this.use(func);\n  }\n  /**\n  * Creates and adds a sub-router to the main server.\n  * @param {string} route The route to listen on\n  * @return {express~Router} The new router instance\n  */\n  createRouter(route) {\n    var router = express.Router();\n    this.__routers.push({ route, router });\n    if(this.hasBooted) this.use(route, router);\n    return router;\n  }\n\n  /**\n  * Adds any preloaded middleware/routers to the stack and starts the server.\n  */\n  boot(app, resolve, reject) {\n    this.use([...middleware, ...this.__middleware]);\n    this.__routers.map(item => this.use(item.route, item.router));\n    this.listen(PORT, () => console.log(`Server listening on ${PORT}`));\n    resolve();\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/tom/Projects/adapt_authoring/node_modules/adapt-authoring-server/lib/server.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 58,
+    "kind": "variable",
+    "name": "Module",
+    "memberof": "node_modules/adapt-authoring-server/lib/server.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-server/lib/server.js~Module",
+    "access": "public",
+    "export": false,
+    "importPath": "adapt-authoring-server/lib/server.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 59,
+    "kind": "variable",
+    "name": "PORT",
+    "memberof": "node_modules/adapt-authoring-server/lib/server.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-server/lib/server.js~PORT",
+    "access": "public",
+    "export": false,
+    "importPath": "adapt-authoring-server/lib/server.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "type": {
+      "types": [
+        "number"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 60,
+    "kind": "class",
+    "name": "Server",
+    "memberof": "node_modules/adapt-authoring-server/lib/server.js",
+    "static": true,
+    "longname": "node_modules/adapt-authoring-server/lib/server.js~Server",
+    "access": "public",
+    "export": true,
+    "importPath": "adapt-authoring-server/lib/server.js",
+    "importStyle": "{Server}",
+    "description": "Adds an Express server to the authoring tool",
+    "lineNumber": 11,
+    "interface": false,
+    "extends": [
+      "Module"
+    ]
+  },
+  {
+    "__docId__": 61,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "node_modules/adapt-authoring-server/lib/server.js~Server",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-server/lib/server.js~Server#constructor",
+    "access": "public",
+    "description": "",
+    "lineNumber": 16,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "App"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "app",
+        "description": "The main application instance"
+      }
+    ]
+  },
+  {
+    "__docId__": 62,
+    "kind": "member",
+    "name": "__middleware",
+    "memberof": "node_modules/adapt-authoring-server/lib/server.js~Server",
+    "static": false,
+    "longname": "node_modules/adapt-authoring-server/lib/server.js~Server#__middleware",
+    "access": "private",
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "member",
+    "name": "__routers",
+    "memberof": "node_modules/adapt-authoring-server/lib/server.js~Server",
+    "static": false,
+    "longname": "node_modules/adapt-authoring-server/lib/server.js~Server#__routers",
+    "access": "private",
+    "description": null,
+    "lineNumber": 19,
+    "undocument": true,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 64,
+    "kind": "member",
+    "name": "use",
+    "memberof": "node_modules/adapt-authoring-server/lib/server.js~Server",
+    "static": false,
+    "longname": "node_modules/adapt-authoring-server/lib/server.js~Server#use",
+    "access": "public",
+    "description": "Add middleware to the Express server stack (shortcut to the Express function of the same name).",
+    "see": [
+      "https://expressjs.com/en/4x/api.html#app.use"
+    ],
+    "lineNumber": 27,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "express.Router"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "router",
+        "description": "A Router instance"
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "member",
+    "name": "listen",
+    "memberof": "node_modules/adapt-authoring-server/lib/server.js~Server",
+    "static": false,
+    "longname": "node_modules/adapt-authoring-server/lib/server.js~Server#listen",
+    "access": "public",
+    "description": "Start the Express server (shortcut to the Express function of the same name).",
+    "see": [
+      "https://expressjs.com/en/4x/api.html#app.listen"
+    ],
+    "lineNumber": 34,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "port",
+        "description": "The port to listen on."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "func",
+        "description": "Callback function to be called on connection."
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 66,
+    "kind": "method",
+    "name": "addMiddleware",
+    "memberof": "node_modules/adapt-authoring-server/lib/server.js~Server",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-server/lib/server.js~Server#addMiddleware",
+    "access": "public",
+    "description": "Adds middleware to the main server. You should call this function prior to server boot (i.e. during preload), so you can be sure your middleware runs before any queued routers.",
+    "see": [
+      "https://expressjs.com/en/guide/writing-middleware.html"
+    ],
+    "lineNumber": 43,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "func",
+        "description": "Callback function to be called on request."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 67,
+    "kind": "method",
+    "name": "createRouter",
+    "memberof": "node_modules/adapt-authoring-server/lib/server.js~Server",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-server/lib/server.js~Server#createRouter",
+    "access": "public",
+    "description": "Creates and adds a sub-router to the main server.",
+    "lineNumber": 52,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "route",
+        "description": "The route to listen on"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "express~Router"
+      ],
+      "spread": false,
+      "description": "The new router instance"
+    }
+  },
+  {
+    "__docId__": 68,
+    "kind": "method",
+    "name": "boot",
+    "memberof": "node_modules/adapt-authoring-server/lib/server.js~Server",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/adapt-authoring-server/lib/server.js~Server#boot",
+    "access": "public",
+    "description": "Adds any preloaded middleware/routers to the stack and starts the server.",
+    "lineNumber": 62,
+    "params": [
+      {
+        "name": "app",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "resolve",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "reject",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 70,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Infinity",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 71,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~NaN",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 72,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objecs/undefined",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~undefined",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 73,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~null",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 74,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Object",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 75,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~object",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 76,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Function",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 77,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~function",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 78,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Boolean",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 79,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~boolean",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 80,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Symbol",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 81,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Error",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 82,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~EvalError",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 83,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~InternalError",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 84,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~RangeError",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 85,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~ReferenceError",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 86,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~SyntaxError",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 87,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~TypeError",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 88,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~URIError",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 89,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Number",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 90,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~number",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 91,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Date",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 92,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~String",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 93,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~string",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 94,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~RegExp",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 95,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Array",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 96,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Int8Array",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 97,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Uint8Array",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 98,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Uint8ClampedArray",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 99,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Int16Array",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 100,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Uint16Array",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 101,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Int32Array",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 102,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Uint32Array",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 103,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Float32Array",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 104,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Float64Array",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 105,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Map",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 106,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Set",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 107,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~WeakMap",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 108,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~WeakSet",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 109,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~ArrayBuffer",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 110,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~DataView",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 111,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~JSON",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 112,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Promise",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 113,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Generator",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 114,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~GeneratorFunction",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 115,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Reflect",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 116,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~Proxy",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 117,
+    "kind": "external",
+    "name": "events~EventEmitter",
+    "externalLink": "https://nodejs.org/api/events.html#events_class_eventemitter",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~events~EventEmitter",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 118,
+    "kind": "external",
+    "name": "express~Router",
+    "externalLink": "https://expressjs.com/en/4x/api.html#router",
+    "memberof": "node_modules/externals.js",
+    "static": true,
+    "longname": "node_modules/externals.js~express~Router",
+    "access": "public",
+    "description": null,
+    "builtinExternal": true
+  },
+  {
+    "kind": "index",
+    "content": "## Adapt authoring tool v0.8.0 documentation\n\nYou've found the documentation for the Adapt authoring tool!\n\n## About this Documentation\nThe goal of this documentation is to explain the architecture and API of the Adapt authoring tool. The sidebar at the left lists the core modules used by the application, and any exports they define.\n\n## Contributing\nIf you come across any errors or omissions with the documentation, please submit an issue on our [GitHub page](https://github.com/adaptlearning/adapt_authoring/issues). If you also have time to fix the issue, you can see our [contribution guide](https://github.com/adaptlearning/adapt_framework/wiki/Contributing-code) on how to submit a fix.\n",
+    "longname": "/Users/tom/Projects/adapt_authoring/docs/DOCS.md",
+    "name": "./docs/DOCS.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manualIndex",
+    "content": "# Index\n\nLuke! Luke! Luke! Luke! Luke, Luke, grab a hold of this. Blast it, will you! My gun's jammed. Where? Anywhere! Oh!! Luke! Luke! Grab him! What happened? I've got a very bad feeling about this. The walls are moving! Don't just stand there. Try to brace it with something. Wait a minute! Threepio! Come in Threepio! Threepio! Where could he be?\n",
+    "longname": "/Users/tom/Projects/adapt_authoring/docs/manual/index.md",
+    "name": "./docs/manual/index.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manualAsset",
+    "longname": "/Users/tom/Projects/adapt_authoring/docs/manual/asset",
+    "name": "./docs/manual/asset",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "/Users/tom/Projects/adapt_authoring/docs/manual/overview.md",
+    "name": "./docs/manual/overview.md",
+    "content": "# Overview\n\nLuke? Luke? Luke? Have you seen Luke this morning? He said he had some things to do before he started today, so he left early. Uh? Did he take those two new droids with him? I think so. Well, he'd better have those units in the south range repaired be midday or there'll be hell to pay! Wait, there's something dead ahead on the scanner. It looks like our droid...hit the accelerator.\n\nThere she is. See-Threepio, do you copy? For the moment. Uh, we're in the main hangar across from the ship. We're right above you. Stand by. You came in that thing? You're braver that I thought. Nice! Come on! It's them! Blast them! Get back to the ship! Where are you going? Come back! He certainly has courage. What good will it do us if he gets himself killed? Come on! I think we took a wrong turn. There's no lock! That oughta hold it for a while. Quick, we've got to get across. Find the control that extends the bridge. Oh, I think I just blasted it. They're coming through! Here, hold this. Here they come! For luck!\n\nLuke! Luke! Luke! Luke! Luke, Luke, grab a hold of this. Blast it, will you! My gun's jammed. Where? Anywhere! Oh!! Luke! Luke! Grab him! What happened? I've got a very bad feeling about this. The walls are moving! Don't just stand there. Try to brace it with something. Wait a minute! Threepio! Come in Threepio! Threepio! Where could he be?\n",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "/Users/tom/Projects/adapt_authoring/INSTALL.md",
+    "name": "./INSTALL.md",
+    "content": "# Installation\n\nYou can find detailed instructions for installing the Adapt authoring tool on the [repository's wiki](https://github.com/adaptlearning/adapt_authoring/wiki/Installing-the-Authoring-Tool).\n",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "/Users/tom/Projects/adapt_authoring/README.md",
+    "name": "./README.md",
+    "content": "# Adapt Authoring Tool\n\n[![Build Status](https://secure.travis-ci.org/adaptlearning/adapt_authoring.png)](http://travis-ci.org/adaptlearning/adapt_authoring) [![Join the chat at https://gitter.im/adaptlearning/adapt_authoring](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/adaptlearning/adapt_authoring?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n\nAdapt is a free and easy to use framework and authoring tool that creates fully responsive, multi-device, HTML5 e-learning content.\n\n## What Does It Do?\n\nThe Adapt authoring tool is a web-based user interface for the [Adapt Framework](https://github.com/adaptlearning/adapt_framework). Use it to create responsive, single-version HTML5 e-learning courses for delivery on a web server or SCORM-compliant learning management system.\n\nInterested? [See what Adapt can do.](https://community.adaptlearning.org/demo2/index.html)\n\n## Features\n\n* Web application built on Node.js, Backbone.js, and MongoDB for creating, editing and publishing Adapt content\n* Supports all core extensions and components\n* Allows uploading and linking of course assets\n\n## Full Documentation\n[Visit the wiki](https://github.com/adaptlearning/adapt_authoring/wiki) for full documentation, including [installation](https://github.com/adaptlearning/adapt_authoring/wiki/Installing-the-Authoring-Tool), course authoring, developer guides, and other information.\n\n## Communication\n+ [Twitter: @AdaptLearning](https://twitter.com/adaptlearning)\n+ [Gitter](https://gitter.im/orgs/adaptlearning/rooms)\n+ [Community Site](https://community.adaptlearning.org/)\n+ [Technical Forum](https://community.adaptlearning.org/mod/forum/view.php?id=4)\n+ [Bugs / Feature Requests](https://github.com/adaptlearning/adapt_authoring/issues)\n+ [Responsive e-Learning Forum](https://community.adaptlearning.org/mod/forum/view.php?id=56)\n\n## Contributing to Adapt\n\nSee [Contributing to the Adapt authoring tool](https://github.com/adaptlearning/adapt_authoring/blob/master/CONTRIBUTING.md).\n\n\n## Troubleshooting, Bugs, and Feedback\n+ For help with troubleshooting, visit the [Technical Discussion Forum](https://community.adaptlearning.org/mod/forum/view.php?id=4).\n+ To report a bug, please [GitHub Issues](https://github.com/adaptlearning/adapt_authoring/issues).\n+ To provide feedback, please use the [GitHub Issues](https://github.com/adaptlearning/adapt_authoring/issues).\n\n## License\n<a href=\"https://community.adaptlearning.org/\" target=\"_blank\"><img src=\"https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg\" alt=\"adapt learning logo\" align=\"right\"></a>  Adapt is licensed under the [GNU General Public License, Version 3](https://github.com/adaptlearning/adapt_authoring/blob/master/LICENSE).\n",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "/Users/tom/Projects/adapt_authoring/CHANGELOG.md",
+    "name": "./CHANGELOG.md",
+    "content": "# Change Log\n\nAll notable changes to the Adapt authoring tool are documented in this file.\n\n**IMPORTANT**: For information on how to **correctly and safely** update your installation, please consult **INSTALL.md**.\n\n_Note that we adhere to the [semantic versioning](http://semver.org/) scheme for release numbering._\n\n## [0.4.1] - 2018-02-05\n\nThis is a patch release fixing issues introduced in v0.4.0.\n\n### Fixed\n- Major performance fix for large installs ([\\#1758](https://github.com/adaptlearning/adapt_authoring/issues/1758))\n- Various minor fixes for install and upgrade scripts ([\\#1749](https://github.com/adaptlearning/adapt_authoring/issues/1749), [\\#1760](https://github.com/adaptlearning/adapt_authoring/issues/1760), [\\#1763](https://github.com/adaptlearning/adapt_authoring/issues/1763), [\\#1797](https://github.com/adaptlearning/adapt_authoring/issues/1797), [\\#1838](https://github.com/adaptlearning/adapt_authoring/issues/1838), [\\#1842](https://github.com/adaptlearning/adapt_authoring/issues/1842))\n- Dashboard paging fixed ([\\#1759](https://github.com/adaptlearning/adapt_authoring/issues/1759))\n- Asset management paging fixed ([\\#1790](https://github.com/adaptlearning/adapt_authoring/issues/1790))\n- Fixed issue whereby the page editor screen would occasionally render the same block twice ([\\#1834](https://github.com/adaptlearning/adapt_authoring/issues/1834))\n- Asset preview image has been fixed for contrib-media video assets ([\\#1835](https://github.com/adaptlearning/adapt_authoring/issues/1835))\n- Fixed menu editor rendering quirks ([\\#1837](https://github.com/adaptlearning/adapt_authoring/issues/1837))\n\n## [0.4.0] - 2017-10-17\n\nMajor refactor of the front-end application.\n\n### Upgrade Notes\nDue to the changes made to the install script, this release restricts the installed framework version to `v2.x.x` to avoid unsupported breaking changes introduced in framework `v3`.\n\nThere are a few notable changes to the code that may impact customisations:\n- `app:dataReady` has been renamed to `origin:dataReady`\n- `variables.less` has been renamed to `colours.less`.\n- Some editor collections have been renamed:\n    - `componentTypes` -> `componenttypes`\n    - `extensionTypes` -> `extensiontypes`\n    - `courseAssets` -> `courseassets`\n\nPlease check the release notes below for more information.\n\n### Added\n- Framework themes can now display a preview in the theme picker. To enable this, a `preview.jpg` file is needed in the theme folder root\n- Can now specify custom auth source for MongoDB ([\\#1673](https://github.com/adaptlearning/adapt_authoring/issues/1673))\n- New `contentPane` module takes over view rendering from `Router`, and acts as a consistent container for main app content. Makes sure scrolling is consistent across the application among other things.\n- EditorDataLoader has been added to preload editor data. You can use the `EditorDataLoader.waitForLoad` function to halt code until preload has finished. You can also use the `editor:dataPreloaded` event.\n\n### Changed\n- Major refactoring of the frontend folder:\n    - 'Core' code separated into modules, and core\n    - Web-app loading rewritten\n    - Core LESS files are now accessible without needing to specify a relative file path. `variables.less` has been renamed to `colours.less`.\n    - All duplicate LESS files have been merged, and put in their respective module folder\n    - The `adaptbuilder` folder has been renamed to `build`\n    - Editor routing code has been simplified, and moved into the sub-module folders. See [modules/editor/index.js#L27-L55](https://github.com/adaptlearning/adapt_authoring/blob/v0.4.0/frontend/src/modules/editor/index.js#L27-L55) for the routing code, and [modules/editor/article/index.js#L10](https://github.com/adaptlearning/adapt_authoring/blob/release-0.4.0/frontend/src/modules/editor/article/index.js#L10) as an example of the new routing method.\n    - Events using `app:` replaced with `origin:` for consistency. Most notably: any code using `app:dataReady` will need to be switched over to listen to `origin:dataReady`\n    - Router has been refactored, and the following convenience functions added: `navigateTo` - wrapper for `Backbone.Router.navigate`, `navigateToLogin`, `setHomeRoute` and `navigateToHome`\n    - Editor collections have been renamed to reflect the MongoDB collection names: `editor.componentTypes` -> `editor.componenttypes`, `editor.extensionTypes` -> `editor.extensiontypes`, `editor.courseAssets` -> `editor.courseassets`\n    - `window.polyglot` has been abstracted into the new localisation module, which can be referenced with `Origin.l10n`\n- Dashboard module has been renamed to projects, and is the default home route\n- User management has moved from plugins to modules\n- Install/upgrade scripts overhauled:\n    - Can now upgrade the server and framework to specific releases\n    - Can now upgrade the server and framework separately\n    - Install/upgrade scripts have been made prettier to look at (and more useful) with the introduction of activity spinners, and more helpful log messages\n    - Upgrade script now ignores draft and prereleases ([\\#1723](https://github.com/adaptlearning/adapt_authoring/issues/1723))\n    - Upgrade/install script now allows custom git repositories to be used for both the server and framework source\n    - Framework version can be restricted so as not to automatically upgrade to a version you don't want to support. To enable this, specify the `framework` version in `package.json` (accepts any valid semver range) ([\\#1703](https://github.com/adaptlearning/adapt_authoring/issues/1703))\n- Besides the schemas, the user interface is now completely localised ([\\#1573](https://github.com/adaptlearning/adapt_authoring/issues/1573))\n- Improved multi-user support for previewing/publishing of courses ([\\#1220](https://github.com/adaptlearning/adapt_authoring/issues/1220))\n- User profile page is now correctly styled ([\\#1413](https://github.com/adaptlearning/adapt_authoring/issues/1413))\n- Newly created courses can now be built without any editing ([\\#1678](https://github.com/adaptlearning/adapt_authoring/issues/1678))\n- Must now input super admin password twice during install to avoid user error ([\\#1032][https://github.com/adaptlearning/adapt_authoring/issues/1032])\n- Abstracted polyglot into the new internal `l10n` library (accessible globally via the `Origin` object). Language strings are now obtained using `Origin.l10n.t`\n- Backbone forms version updated, and override code tidied up/removed where possible\n- Boolean selects are now rendered as checkboxes.\n\n### Removed\n- **Vagrant support has been dropped** ([\\#1503](https://github.com/adaptlearning/adapt_authoring/issues/1503))\n- The user management's user list sort is now case-insensitive ([\\#1549](https://github.com/adaptlearning/adapt_authoring/issues/1549))\n- Front-end tests removed for now\n\n### Fixed\n- Framework plugin update has been fixed ([\\#1415](https://github.com/adaptlearning/adapt_authoring/issues/1415))\n- Unused user password reset data is now cleared on delete of the related user ([\\#1553](https://github.com/adaptlearning/adapt_authoring/issues/1553))\n- Copy and paste now correctly includes any extension settings ([\\#1484](https://github.com/adaptlearning/adapt_authoring/issues/1484))\n- Dashboard no longer hangs if large images have been used as hero images ([\\#1470](https://github.com/adaptlearning/adapt_authoring/issues/1470))\n- Server plugin schemas now correctly reflect the latest state after a plugin has been updated (previously a server restart was needed for any schema changes to be reflected) ([\\#1524](https://github.com/adaptlearning/adapt_authoring/issues/1524))\n- Preview loading route added to prevent preview opening in a background tab/window ([\\#1636](https://github.com/adaptlearning/adapt_authoring/issues/1636))\n- We now only attempt to load valid routes, avoiding unnecessary server breakdowns ([\\#1534](https://github.com/adaptlearning/adapt_authoring/issues/1534))\n- Mocha tests fixed, and integrated with TravisCI\n- Dragging is now restricted for components depending on layout ([\\#1631](https://github.com/adaptlearning/adapt_authoring/issues/1631))\n\n## [0.3.0] - 2017-01-24\n\nUser management feature release.\n\n### Added\n- User management\n  - Can add users\n  - Can edit existing users (email, password, tenant, role, unlock locked accounts)\n  - Can disable/restore users\n  - Can delete users\n- Add option to disable automatic switching-on of accessibility on touch devices\n- Mailer now supports HTML templated emails\n- User's roles now displayed on their profile page\n\n### Changed\n- Asset description is no longer a required field\n- Updated config.json with up-to-date values\n- Permissions page styled to match UI refresh\n- Travis CI configuration updated:\n  - Added Node.js version 4, 5 and 6\n  - git, mongodb and adapt versions logged to console\n  - Removed caching for `node_modules` directory\n  - Removed `on_start` from notifications as Travis WebLint shows as deprecated\n\n### Fixed\n- Block alignment in page editor\n- Password reset emails now work as intended\n- The 'enabled' checkbox in Plugin Management now hides plugins from editor\n- Removed tab/newline chars from CKEditor output to fix tabbing in published courses\n- Menu picker selected colouring\n- Notify content is now scrollable, rather than being rendered off screen\n\n## [0.2.2] - 2016-09-13\n\nBugfix release.\n\n### Added\n- Support for editing JSON objects, for example, the `_playerOptions` array in the Media component\n\n### Fixed\n- Vagrant issue with preventing updating plugins\n\n## [0.2.1] - 2016-08-16\n\nBugfix release after community user testing.\n\n### Added\n- LESS sourcemaps\n\n### Fixed\n- Block drop-zone padding\n- Export button now hidden again for all non-admin users\n- Auto-scrolling while dragging on menu editor and page editor screens\n- Styling of scaffold list items\n- LESS imports now working\n- reset.less now loaded before *everything*\n\n## [0.2.0] - 2016-07-27\n\nMajor theme update to match the new look and feel of [adaptlearning.org](www.adaptlearning.org).\n\n### Changed\n- Disabled SSL certificate check during Vagrant install\n\n### Fixed\n- Caching issue related to course schemas\n- Tag autocomplete mechanism sometimes throws 500 error\n- Form validation\n- Saving course settings hangs if nothing has been changed  \n\n## [0.1.7] - 2016-04-28\n\nBugfix release to support framework v2.0.9.\n\n### Added\n- Support for new Adapt Framework 'menu locking' functionality\n- Support for v2.0.9 of the Adapt Framework\n- Support for `_isAvailable` flag\n- Added link to GitHub repositories for plugins\n\n### Changed\n- Extended `<legend>` styles to arrays\n- Improved database connection caching\n- Updated code to respect property order in schema files\n\n### Fixed\n- Role statements not updated on a server restart\n- Autocomplete enabled on text input fields\n- MongoStore does not support `replicasets`\n- Removed `@learningpool.com` e-mail address hack\n\n## [0.1.6] - 2016-03-29\n\nRelease to add source-code export of courses.\n\n### Added\n- Support for new Adapt Framework 'start page' functionality\n- Ability to export source code including plugins enabled for a course\n- Support for v2.0.8 of the Adapt Framework\n- Support for Google Analytics\n- Support for custom plugins in the plugins folder\n- Trigger for enabling extensions\n- Added support for Node.js v4.3.x LTS.\n\n### Changed\n- Support for Font Awesome 4.5.0\n\n### Fixed\n- Export doesn't auto download in Firefox\n- Vagrant setup on windows processes.json not found\n- Preview fails running vagrant on windows\n- Unable to delete blocks after copy and paste\n- Intermittent error in copy and pasting component\n\n## [0.1.5] - 2016-02-16\n\nBugfix release to support framework v2.0.7.\n\n### Added\n- Support for v2.0.7 of the Adapt Framework\n- Optimised build process, i.e. only plugins used are bundled\n- Ability to copy the `_id` value of `contentobjects`, `articles`, `blocks` and `components` to clipboard\n- Ability to easily change component layouts without using drag and drop\n- Ability to export the source code of a particular course\n- Caching added to assets to improve performance\n\n### Changed\n- `_isAvailableInEditor` flag persisted when a new plugin is uploaded\n- Optimised performance of processing course assets in preview/download\n- Preview redirects to index.html rather than main.html\n- The count of failed logins is reset after a successful login\n- Turned off automatic population of display title for blocks\n\n### Fixed\n- Non-essential attributes removed from `course.json`\n- ACE JavaScript error when creating a new course\n- Hard 100kb limit on JSON payload\n- Corrected Project Details save issue\n\n## [0.1.4] - 2015-11-25\n\nRelease to add support for Node.js v4.2.2 LTS.\n\n### Added\n- Support for Node.js v4.2.2 LTS\n- Support for generating JavaScript source maps on preview or download (via Configuration Settings)\n- Support for Vagrant\n- Support for JSCS\n\n### Changed\n- Locking the Title and Display Title by default\n- Renamed 'Publish' button to 'Download'\n- Updated package dependencies to correct security issues\n- Assets can now be defined in `articles.json`\n- Tag length has been increased to 30 characters\n\n### Fixed\n- Error on copying and pasting a block\n- Custom CSS/LESS not pulling through\n- `_supportedLayout` not working correctly\n\n## [0.1.3] - 2015-10-21\n\nBugfix release.\n\n### Added\n- Support for MongoDB `replicasets`\n- More robust processing for missing schema pluginLocations\n- Support for `_accessibility` added to Configuration Settings\n- Support for screen breakpoints added to Configuration Settings\n- Added security to preview route\n\n### Changed\n- Standardised notifications and implemented SweetAlert library\n- Bumped CKEditor version to 4.5.4\n\n### Fixed\n- Page and menu/sections were created without a `linkText` property set\n- IE9 issue with editor and list formatting\n- Problem with `isAssetExternal()`\n- Dashboard problems when a hero image is not set\n- Added validation for length of database name\n- Added validation to Configuration Settings\n\n## [0.1.2] - 2015-09-30\n\nBugfix release.\n\n### Added\n- Support for `_isOptional` (Adapt Framework v2.x)\n- Support for accessibility (Adapt Framework v2.x)\n- Support for plugin 'globals' (Adapt Framework v2.x)\n- Improved install/upgrade\n- 'Global' configurations for plugins are conditionally applied\n- Added basic browser-based spell-check to HTML editor\n- Table editing is now an option on the HTML editor\n- Any `<span>` tag added in the HTML editor is now preserved\n- Support for 'Autofill' on graphic components\n- Confirmation when deleting a component/extension item, such as a narrative or question stem\n- Ability to delete assets\n- Support for Adapt Framework v2.x assessment extension\n\n### Changed\n- Course now has a Display Title property\n- Default plugins are now taken from the framework `adapt.json` file, hard-coded references to plugins are\n- Removed the dependency on adapt-cli\n- Added better logging for Validation Failed errors on database operations\n- Remove hard-coded references to core plugins\n- Upgrade to Express 4, support NodeJS 0.12.6 (removed hard dependency on 0.10.33)\n- Any `logger.log()` calls now support placeholders properly\n- Authoring tool specific properties now removed from output JSON\n- Updated logo\n\n### Fixed\n- Course tags lost when a hero image is added or removed\n- Broken preview and publish after deleting asset\n- Tutor extension breaks configuration screen\n- Asset collection not displaying results when a small number of records should have been retrieved\n- Component type label gets lost on plugin upgrade\n- 500 error when updating plugins with framework v1.1.5\n- Resource link save errors\n- Assets on moved components hold reference to previous block\n- When ffmpeg is not installed, the thumbnailPath 'none' causes issues with routers\n- Deleting an article or page does not remove associated assets contained with in\n- Modal overlay has a few responsive issues when appending content/custom editing views\n- Issue with long list item attribute values going outside of the list item box\n- Issue with nested items in backbone forms showing as `[object Object]`\n- Course tags were removed when a hero image was added or removed\n\n\n\n## [0.1.1] - 2015-03-12\n\nLarge bugfix release.\n\n## Upgrade Notes\nIf upgrading from a previous version, please add the following keys to your config.json\n- `outputPlugin` -> `adapt`\n- `masterTenantName` -> {name of the folder containing your master tenant files}\n- `masterTenantID` - {MongoDB `_id` of the initial first row in the `tenants` collection}\n\n### Added\n- Support for client-side configs\n- Proper support for shared courses\n- Poster images now available on courses\n- Progress indicator on preview\n- Support for `_trackingId` values\n\n### Changed\n- Role permissions synced on a server restart\n- Re-factoring of build process\n- Install process updated\n\n### Fixed\n- Minor IE9 fixes\n- Corrected 'Back to courses' button\n- Missing language strings\n- Fixes around drag and drop, copy and paste\n- Asset manager filters\n- General UI fixes\n- Fixes with theme and menu selection to persist selection after new versions are installed\n- Various context menu issues\n\n\n## [0.1.0] - 2015-01-26\n\nInitial release.\n\n### Added\n- Support for menu selection\n- Support to load configuration from process.env\n- Support for nested properties in component schemas\n- Tag autocompletion\n- Added indicator to feedback on saving status\n- Added \"Remember Me\" functionality\n- Asset upload from within asset manager\n- Progressive loading of assets\n- Progressive loading of dashboard\n- Now storing first and last login for user\n\n### Changed\n- Replaced editor with CKEditor\n- Improved performance with policy files and permissions\n- Clear permission cache on role adjustment\n- Switched to cli installer\n- Made the dashboard pluggable\n- Copy/paste moved to server-side\n- Content plugins preloaded on server boot\n- Asset records now use relative paths\n\n### Removed\n- iframe previews\n- Sockets.io (for now...)\n\n### Fixed\n- Issue with tags input in IE9\n- Issue where project settings caused a javascript error\n- Issue with uploading gifs would fail\n- Issues with course duplication\n- Issues with `bowercache` file locking\n- Issues with drag and drop in page editor\n- Loading screen of death\n- Session cookie security issues\n\n[0.4.1]: https://github.com/adaptlearning/adapt_authoring/compare/v0.4.0...v0.4.1\n[0.4.0]: https://github.com/adaptlearning/adapt_authoring/compare/v0.3.0...v0.4.0\n[0.3.0]: https://github.com/adaptlearning/adapt_authoring/compare/v0.2.2...v0.3.0\n[0.2.2]: https://github.com/adaptlearning/adapt_authoring/compare/v0.2.1...v0.2.2\n[0.2.1]: https://github.com/adaptlearning/adapt_authoring/compare/v0.2.0...v0.2.1\n[0.2.0]: https://github.com/adaptlearning/adapt_authoring/compare/v0.1.7...v0.2.0\n[0.1.7]: https://github.com/adaptlearning/adapt_authoring/compare/v0.1.6...v0.1.7\n[0.1.6]: https://github.com/adaptlearning/adapt_authoring/compare/v0.1.5...v0.1.6\n[0.1.5]: https://github.com/adaptlearning/adapt_authoring/compare/v0.1.4...v0.1.5\n[0.1.4]: https://github.com/adaptlearning/adapt_authoring/compare/v0.1.3...v0.1.4\n[0.1.3]: https://github.com/adaptlearning/adapt_authoring/compare/v0.1.2...v0.1.3\n[0.1.2]: https://github.com/adaptlearning/adapt_authoring/compare/v0.1.1...v0.1.2\n[0.1.1]: https://github.com/adaptlearning/adapt_authoring/compare/v0.1.0...v0.1.1\n[0.1.0]: https://github.com/adaptlearning/adapt_authoring/tree/v0.1.0\n",
+    "static": true,
+    "access": "public"
+  }
+]

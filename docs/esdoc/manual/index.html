@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../">
+  <title data-ice="title">Manual | Adapt authoring tool</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-adapt.css"><meta name="description" content="A server-based user interface for authoring eLearning courses using the Adapt Framework."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Adapt authoring tool"><meta property="twitter:description" content="A server-based user interface for authoring eLearning courses using the Adapt Framework."></head>
+<body class="layout-container manual-root manual-index" data-ice="rootContainer">
+
+<header>
+  <a href="./" style="display: flex; align-items: center;"><img src="./image/brand_logo.png" style="width:34px;"></a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/adaptlearning/adapt_authoring.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/overview.html"><a href="manual/overview.html" data-ice="link">Overview</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/INSTALL.html"><a href="manual/INSTALL.html" data-ice="link">Installation</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.html"><a href="manual/README.html" data-ice="link">Adapt Authoring Tool</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html"><a href="manual/README.html#what-does-it-do-" data-ice="link">What Does It Do?</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html"><a href="manual/README.html#features" data-ice="link">Features</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html"><a href="manual/README.html#full-documentation" data-ice="link">Full Documentation</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html"><a href="manual/README.html#communication" data-ice="link">Communication</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html"><a href="manual/README.html#contributing-to-adapt" data-ice="link">Contributing to Adapt</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html"><a href="manual/README.html#troubleshooting--bugs--and-feedback" data-ice="link">Troubleshooting, Bugs, and Feedback</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html"><a href="manual/README.html#license" data-ice="link">License</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html" data-ice="link">Change Log</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-adaptlearning-adapt-authoring-compare-v0-4-0---v0-4-1--0-4-1--a----2018-02-05" data-ice="link">0.4.1 - 2018-02-05</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-adaptlearning-adapt-authoring-compare-v0-3-0---v0-4-0--0-4-0--a----2017-10-17" data-ice="link">0.4.0 - 2017-10-17</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#upgrade-notes" data-ice="link">Upgrade Notes</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-adaptlearning-adapt-authoring-compare-v0-2-2---v0-3-0--0-3-0--a----2017-01-24" data-ice="link">0.3.0 - 2017-01-24</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-adaptlearning-adapt-authoring-compare-v0-2-1---v0-2-2--0-2-2--a----2016-09-13" data-ice="link">0.2.2 - 2016-09-13</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-adaptlearning-adapt-authoring-compare-v0-2-0---v0-2-1--0-2-1--a----2016-08-16" data-ice="link">0.2.1 - 2016-08-16</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-adaptlearning-adapt-authoring-compare-v0-1-7---v0-2-0--0-2-0--a----2016-07-27" data-ice="link">0.2.0 - 2016-07-27</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-adaptlearning-adapt-authoring-compare-v0-1-6---v0-1-7--0-1-7--a----2016-04-28" data-ice="link">0.1.7 - 2016-04-28</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-adaptlearning-adapt-authoring-compare-v0-1-5---v0-1-6--0-1-6--a----2016-03-29" data-ice="link">0.1.6 - 2016-03-29</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-adaptlearning-adapt-authoring-compare-v0-1-4---v0-1-5--0-1-5--a----2016-02-16" data-ice="link">0.1.5 - 2016-02-16</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-adaptlearning-adapt-authoring-compare-v0-1-3---v0-1-4--0-1-4--a----2015-11-25" data-ice="link">0.1.4 - 2015-11-25</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-adaptlearning-adapt-authoring-compare-v0-1-2---v0-1-3--0-1-3--a----2015-10-21" data-ice="link">0.1.3 - 2015-10-21</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-adaptlearning-adapt-authoring-compare-v0-1-1---v0-1-2--0-1-2--a----2015-09-30" data-ice="link">0.1.2 - 2015-09-30</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-adaptlearning-adapt-authoring-compare-v0-1-0---v0-1-1--0-1-1--a----2015-03-12" data-ice="link">0.1.1 - 2015-03-12</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#upgrade-notes" data-ice="link">Upgrade Notes</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#-a-href--https---github-com-adaptlearning-adapt-authoring-tree-v0-1-0--0-1-0--a----2015-01-26" data-ice="link">0.1.0 - 2015-01-26</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#removed" data-ice="link">Removed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+</ul>
+  </div>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="github-markdown">
+  <div class="manual-user-index" data-ice="manualUserIndex"><h1 id="index">Index</h1><p>Luke! Luke! Luke! Luke! Luke, Luke, grab a hold of this. Blast it, will you! My gun&apos;s jammed. Where? Anywhere! Oh!! Luke! Luke! Grab him! What happened? I&apos;ve got a very bad feeling about this. The walls are moving! Don&apos;t just stand there. Try to brace it with something. Wait a minute! Threepio! Come in Threepio! Threepio! Where could he be?</p>
+</div>
+
+  
+
+  <div class="manual-cards">
+    
+  <div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Overview</h1><p>Luke? Luke? Luke? Have you seen Luke this morning? He said he had some things to do before he started today, so he left early. Uh? Did he take those two new droids with him? I think so. Well, he&apos;d better have those units in the south range repaired be midday or there&apos;ll be hell to pay! Wait, there&apos;s something dead ahead on the scanner. It looks like our droid...hit the accelerator.</p><p>There she is. See-Threepio, do you copy? For the moment. Uh, we&apos;re in the main hangar across from the ship. We&apos;re right above you. Stand by. You came in that thing? You&apos;re braver that I thought. Nice! Come on! It&apos;s them! Blast them! Get back to the ship! Where are you going? Come back! He certainly has courage. What good will it do us if he gets himself killed? Come on! I think we took a wrong turn. There&apos;s no lock! That oughta hold it for a while. Quick, we&apos;ve got to get across. Find the control that extends the bridge. Oh, I think I just blasted it. They&apos;re coming through! Here, hold this. Here they come! For luck!</p><p>Luke! Luke! Luke! Luke! Luke, Luke, grab a hold of this. Blast it, will you! My gun&apos;s jammed. Where? Anywhere! Oh!! Luke! Luke! Grab him! What happened? I&apos;ve got a very bad feeling about this. The walls are moving! Don&apos;t just stand there. Try to brace it with something. Wait a minute! Threepio! Come in Threepio! Threepio! Where could he be?</p></div>
+        <a data-ice="link" href="manual/overview.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Installation</h1><p>You can find detailed instructions for installing the Adapt authoring tool on the <a href="https://github.com/adaptlearning/adapt_authoring/wiki/Installing-the-Authoring-Tool">repository&apos;s wiki</a>.</p></div>
+        <a data-ice="link" href="manual/INSTALL.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Adapt Authoring Tool</h1><p><a href="http://travis-ci.org/adaptlearning/adapt_authoring"><img src="https://secure.travis-ci.org/adaptlearning/adapt_authoring.png" alt="Build Status"></a> <a href="https://gitter.im/adaptlearning/adapt_authoring?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/adaptlearning/adapt_authoring"></a></p><p>Adapt is a free and easy to use framework and authoring tool that creates fully responsive, multi-device, HTML5 e-learning content.</p><h2>What Does It Do?</h2><p>The Adapt authoring tool is a web-based user interface for the <a href="https://github.com/adaptlearning/adapt_framework">Adapt Framework</a>. Use it to create responsive, single-version HTML5 e-learning courses for delivery on a web server or SCORM-compliant learning management system.</p><p>Interested? <a href="https://community.adaptlearning.org/demo2/index.html">See what Adapt can do.</a></p><h2>Features</h2><ul>
+<li>Web application built on Node.js, Backbone.js, and MongoDB for creating, editing and publishing Adapt content</li>
+<li>Supports all core extensions and components</li>
+<li>Allows uploading and linking of course assets</li>
+</ul><h2>Full Documentation</h2><p><a href="https://github.com/adaptlearning/adapt_authoring/wiki">Visit the wiki</a> for full documentation, including <a href="https://github.com/adaptlearning/adapt_authoring/wiki/Installing-the-Authoring-Tool">installation</a>, course authoring, developer guides, and other information.</p><h2>Communication</h2><ul>
+<li><a href="https://twitter.com/adaptlearning">Twitter: @AdaptLearning</a></li>
+<li><a href="https://gitter.im/orgs/adaptlearning/rooms">Gitter</a></li>
+<li><a href="https://community.adaptlearning.org/">Community Site</a></li>
+<li><a href="https://community.adaptlearning.org/mod/forum/view.php?id=4">Technical Forum</a></li>
+<li><a href="https://github.com/adaptlearning/adapt_authoring/issues">Bugs / Feature Requests</a></li>
+<li><a href="https://community.adaptlearning.org/mod/forum/view.php?id=56">Responsive e-Learning Forum</a></li>
+</ul><h2>Contributing to Adapt</h2><p>See <a href="https://github.com/adaptlearning/adapt_authoring/blob/master/CONTRIBUTING.md">Contributing to the Adapt authoring tool</a>.</p><h2>Troubleshooting, Bugs, and Feedback</h2><ul>
+<li>For help with troubleshooting, visit the <a href="https://community.adaptlearning.org/mod/forum/view.php?id=4">Technical Discussion Forum</a>.</li>
+<li>To report a bug, please <a href="https://github.com/adaptlearning/adapt_authoring/issues">GitHub Issues</a>.</li>
+<li>To provide feedback, please use the <a href="https://github.com/adaptlearning/adapt_authoring/issues">GitHub Issues</a>.</li>
+</ul><h2>License</h2><p><a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg"></a>  Adapt is licensed under the <a href="https://github.com/adaptlearning/adapt_authoring/blob/master/LICENSE">GNU General Public License, Version 3</a>.</p></div>
+        <a data-ice="link" href="manual/README.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Change Log</h1><p>All notable changes to the Adapt authoring tool are documented in this file.</p><p><strong>IMPORTANT</strong>: For information on how to <strong>correctly and safely</strong> update your installation, please consult <strong>INSTALL.md</strong>.</p><p><em>Note that we adhere to the <a href="http://semver.org/">semantic versioning</a> scheme for release numbering.</em></p><h2><a href="https://github.com/adaptlearning/adapt_authoring/compare/v0.4.0...v0.4.1">0.4.1</a> - 2018-02-05</h2><p>This is a patch release fixing issues introduced in v0.4.0.</p><h3>Fixed</h3><ul>
+<li>Major performance fix for large installs (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1758">#1758</a>)</li>
+<li>Various minor fixes for install and upgrade scripts (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1749">#1749</a>, <a href="https://github.com/adaptlearning/adapt_authoring/issues/1760">#1760</a>, <a href="https://github.com/adaptlearning/adapt_authoring/issues/1763">#1763</a>, <a href="https://github.com/adaptlearning/adapt_authoring/issues/1797">#1797</a>, <a href="https://github.com/adaptlearning/adapt_authoring/issues/1838">#1838</a>, <a href="https://github.com/adaptlearning/adapt_authoring/issues/1842">#1842</a>)</li>
+<li>Dashboard paging fixed (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1759">#1759</a>)</li>
+<li>Asset management paging fixed (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1790">#1790</a>)</li>
+<li>Fixed issue whereby the page editor screen would occasionally render the same block twice (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1834">#1834</a>)</li>
+<li>Asset preview image has been fixed for contrib-media video assets (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1835">#1835</a>)</li>
+<li>Fixed menu editor rendering quirks (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1837">#1837</a>)</li>
+</ul><h2><a href="https://github.com/adaptlearning/adapt_authoring/compare/v0.3.0...v0.4.0">0.4.0</a> - 2017-10-17</h2><p>Major refactor of the front-end application.</p><h3>Upgrade Notes</h3><p>Due to the changes made to the install script, this release restricts the installed framework version to <code>v2.x.x</code> to avoid unsupported breaking changes introduced in framework <code>v3</code>.</p><p>There are a few notable changes to the code that may impact customisations:</p><ul>
+<li><code>app:dataReady</code> has been renamed to <code>origin:dataReady</code></li>
+<li><code>variables.less</code> has been renamed to <code>colours.less</code>.</li>
+<li>Some editor collections have been renamed:<ul>
+<li><code>componentTypes</code> -&gt; <code>componenttypes</code></li>
+<li><code>extensionTypes</code> -&gt; <code>extensiontypes</code></li>
+<li><code>courseAssets</code> -&gt; <code>courseassets</code></li>
+</ul>
+</li>
+</ul><p>Please check the release notes below for more information.</p><h3>Added</h3><ul>
+<li>Framework themes can now display a preview in the theme picker. To enable this, a <code>preview.jpg</code> file is needed in the theme folder root</li>
+<li>Can now specify custom auth source for MongoDB (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1673">#1673</a>)</li>
+<li>New <code>contentPane</code> module takes over view rendering from <code>Router</code>, and acts as a consistent container for main app content. Makes sure scrolling is consistent across the application among other things.</li>
+<li>EditorDataLoader has been added to preload editor data. You can use the <code>EditorDataLoader.waitForLoad</code> function to halt code until preload has finished. You can also use the <code>editor:dataPreloaded</code> event.</li>
+</ul><h3>Changed</h3><ul>
+<li>Major refactoring of the frontend folder:<ul>
+<li>&apos;Core&apos; code separated into modules, and core</li>
+<li>Web-app loading rewritten</li>
+<li>Core LESS files are now accessible without needing to specify a relative file path. <code>variables.less</code> has been renamed to <code>colours.less</code>.</li>
+<li>All duplicate LESS files have been merged, and put in their respective module folder</li>
+<li>The <code>adaptbuilder</code> folder has been renamed to <code>build</code></li>
+<li>Editor routing code has been simplified, and moved into the sub-module folders. See <a href="https://github.com/adaptlearning/adapt_authoring/blob/v0.4.0/frontend/src/modules/editor/index.js#L27-L55">modules/editor/index.js#L27-L55</a> for the routing code, and <a href="https://github.com/adaptlearning/adapt_authoring/blob/release-0.4.0/frontend/src/modules/editor/article/index.js#L10">modules/editor/article/index.js#L10</a> as an example of the new routing method.</li>
+<li>Events using <code>app:</code> replaced with <code>origin:</code> for consistency. Most notably: any code using <code>app:dataReady</code> will need to be switched over to listen to <code>origin:dataReady</code></li>
+<li>Router has been refactored, and the following convenience functions added: <code>navigateTo</code> - wrapper for <code>Backbone.Router.navigate</code>, <code>navigateToLogin</code>, <code>setHomeRoute</code> and <code>navigateToHome</code></li>
+<li>Editor collections have been renamed to reflect the MongoDB collection names: <code>editor.componentTypes</code> -&gt; <code>editor.componenttypes</code>, <code>editor.extensionTypes</code> -&gt; <code>editor.extensiontypes</code>, <code>editor.courseAssets</code> -&gt; <code>editor.courseassets</code></li>
+<li><code>window.polyglot</code> has been abstracted into the new localisation module, which can be referenced with <code>Origin.l10n</code></li>
+</ul>
+</li>
+<li>Dashboard module has been renamed to projects, and is the default home route</li>
+<li>User management has moved from plugins to modules</li>
+<li>Install/upgrade scripts overhauled:<ul>
+<li>Can now upgrade the server and framework to specific releases</li>
+<li>Can now upgrade the server and framework separately</li>
+<li>Install/upgrade scripts have been made prettier to look at (and more useful) with the introduction of activity spinners, and more helpful log messages</li>
+<li>Upgrade script now ignores draft and prereleases (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1723">#1723</a>)</li>
+<li>Upgrade/install script now allows custom git repositories to be used for both the server and framework source</li>
+<li>Framework version can be restricted so as not to automatically upgrade to a version you don&apos;t want to support. To enable this, specify the <code>framework</code> version in <code>package.json</code> (accepts any valid semver range) (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1703">#1703</a>)</li>
+</ul>
+</li>
+<li>Besides the schemas, the user interface is now completely localised (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1573">#1573</a>)</li>
+<li>Improved multi-user support for previewing/publishing of courses (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1220">#1220</a>)</li>
+<li>User profile page is now correctly styled (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1413">#1413</a>)</li>
+<li>Newly created courses can now be built without any editing (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1678">#1678</a>)</li>
+<li>Must now input super admin password twice during install to avoid user error ([#1032][<a href="https://github.com/adaptlearning/adapt_authoring/issues/1032]">https://github.com/adaptlearning/adapt_authoring/issues/1032]</a>)</li>
+<li>Abstracted polyglot into the new internal <code>l10n</code> library (accessible globally via the <code>Origin</code> object). Language strings are now obtained using <code>Origin.l10n.t</code></li>
+<li>Backbone forms version updated, and override code tidied up/removed where possible</li>
+<li>Boolean selects are now rendered as checkboxes.</li>
+</ul><h3>Removed</h3><ul>
+<li><strong>Vagrant support has been dropped</strong> (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1503">#1503</a>)</li>
+<li>The user management&apos;s user list sort is now case-insensitive (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1549">#1549</a>)</li>
+<li>Front-end tests removed for now</li>
+</ul><h3>Fixed</h3><ul>
+<li>Framework plugin update has been fixed (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1415">#1415</a>)</li>
+<li>Unused user password reset data is now cleared on delete of the related user (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1553">#1553</a>)</li>
+<li>Copy and paste now correctly includes any extension settings (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1484">#1484</a>)</li>
+<li>Dashboard no longer hangs if large images have been used as hero images (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1470">#1470</a>)</li>
+<li>Server plugin schemas now correctly reflect the latest state after a plugin has been updated (previously a server restart was needed for any schema changes to be reflected) (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1524">#1524</a>)</li>
+<li>Preview loading route added to prevent preview opening in a background tab/window (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1636">#1636</a>)</li>
+<li>We now only attempt to load valid routes, avoiding unnecessary server breakdowns (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1534">#1534</a>)</li>
+<li>Mocha tests fixed, and integrated with TravisCI</li>
+<li>Dragging is now restricted for components depending on layout (<a href="https://github.com/adaptlearning/adapt_authoring/issues/1631">#1631</a>)</li>
+</ul><h2><a href="https://github.com/adaptlearning/adapt_authoring/compare/v0.2.2...v0.3.0">0.3.0</a> - 2017-01-24</h2><p>User management feature release.</p><h3>Added</h3><ul>
+<li>User management<ul>
+<li>Can add users</li>
+<li>Can edit existing users (email, password, tenant, role, unlock locked accounts)</li>
+<li>Can disable/restore users</li>
+<li>Can delete users</li>
+</ul>
+</li>
+<li>Add option to disable automatic switching-on of accessibility on touch devices</li>
+<li>Mailer now supports HTML templated emails</li>
+<li>User&apos;s roles now displayed on their profile page</li>
+</ul><h3>Changed</h3><ul>
+<li>Asset description is no longer a required field</li>
+<li>Updated config.json with up-to-date values</li>
+<li>Permissions page styled to match UI refresh</li>
+<li>Travis CI configuration updated:<ul>
+<li>Added Node.js version 4, 5 and 6</li>
+<li>git, mongodb and adapt versions logged to console</li>
+<li>Removed caching for <code>node_modules</code> directory</li>
+<li>Removed <code>on_start</code> from notifications as Travis WebLint shows as deprecated</li>
+</ul>
+</li>
+</ul><h3>Fixed</h3><ul>
+<li>Block alignment in page editor</li>
+<li>Password reset emails now work as intended</li>
+<li>The &apos;enabled&apos; checkbox in Plugin Management now hides plugins from editor</li>
+<li>Removed tab/newline chars from CKEditor output to fix tabbing in published courses</li>
+<li>Menu picker selected colouring</li>
+<li>Notify content is now scrollable, rather than being rendered off screen</li>
+</ul><h2><a href="https://github.com/adaptlearning/adapt_authoring/compare/v0.2.1...v0.2.2">0.2.2</a> - 2016-09-13</h2><p>Bugfix release.</p><h3>Added</h3><ul>
+<li>Support for editing JSON objects, for example, the <code>_playerOptions</code> array in the Media component</li>
+</ul><h3>Fixed</h3><ul>
+<li>Vagrant issue with preventing updating plugins</li>
+</ul><h2><a href="https://github.com/adaptlearning/adapt_authoring/compare/v0.2.0...v0.2.1">0.2.1</a> - 2016-08-16</h2><p>Bugfix release after community user testing.</p><h3>Added</h3><ul>
+<li>LESS sourcemaps</li>
+</ul><h3>Fixed</h3><ul>
+<li>Block drop-zone padding</li>
+<li>Export button now hidden again for all non-admin users</li>
+<li>Auto-scrolling while dragging on menu editor and page editor screens</li>
+<li>Styling of scaffold list items</li>
+<li>LESS imports now working</li>
+<li>reset.less now loaded before <em>everything</em></li>
+</ul><h2><a href="https://github.com/adaptlearning/adapt_authoring/compare/v0.1.7...v0.2.0">0.2.0</a> - 2016-07-27</h2><p>Major theme update to match the new look and feel of <a href="./manual/www.adaptlearning.org">adaptlearning.org</a>.</p><h3>Changed</h3><ul>
+<li>Disabled SSL certificate check during Vagrant install</li>
+</ul><h3>Fixed</h3><ul>
+<li>Caching issue related to course schemas</li>
+<li>Tag autocomplete mechanism sometimes throws 500 error</li>
+<li>Form validation</li>
+<li>Saving course settings hangs if nothing has been changed  </li>
+</ul><h2><a href="https://github.com/adaptlearning/adapt_authoring/compare/v0.1.6...v0.1.7">0.1.7</a> - 2016-04-28</h2><p>Bugfix release to support framework v2.0.9.</p><h3>Added</h3><ul>
+<li>Support for new Adapt Framework &apos;menu locking&apos; functionality</li>
+<li>Support for v2.0.9 of the Adapt Framework</li>
+<li>Support for <code>_isAvailable</code> flag</li>
+<li>Added link to GitHub repositories for plugins</li>
+</ul><h3>Changed</h3><ul>
+<li>Extended <code>&lt;legend&gt;</code> styles to arrays</li>
+<li>Improved database connection caching</li>
+<li>Updated code to respect property order in schema files</li>
+</ul><h3>Fixed</h3><ul>
+<li>Role statements not updated on a server restart</li>
+<li>Autocomplete enabled on text input fields</li>
+<li>MongoStore does not support <code>replicasets</code></li>
+<li>Removed <a href="./manual/mailto:`@learningpool.com">`@learningpool.com</a>` e-mail address hack</li>
+</ul><h2><a href="https://github.com/adaptlearning/adapt_authoring/compare/v0.1.5...v0.1.6">0.1.6</a> - 2016-03-29</h2><p>Release to add source-code export of courses.</p><h3>Added</h3><ul>
+<li>Support for new Adapt Framework &apos;start page&apos; functionality</li>
+<li>Ability to export source code including plugins enabled for a course</li>
+<li>Support for v2.0.8 of the Adapt Framework</li>
+<li>Support for Google Analytics</li>
+<li>Support for custom plugins in the plugins folder</li>
+<li>Trigger for enabling extensions</li>
+<li>Added support for Node.js v4.3.x LTS.</li>
+</ul><h3>Changed</h3><ul>
+<li>Support for Font Awesome 4.5.0</li>
+</ul><h3>Fixed</h3><ul>
+<li>Export doesn&apos;t auto download in Firefox</li>
+<li>Vagrant setup on windows processes.json not found</li>
+<li>Preview fails running vagrant on windows</li>
+<li>Unable to delete blocks after copy and paste</li>
+<li>Intermittent error in copy and pasting component</li>
+</ul><h2><a href="https://github.com/adaptlearning/adapt_authoring/compare/v0.1.4...v0.1.5">0.1.5</a> - 2016-02-16</h2><p>Bugfix release to support framework v2.0.7.</p><h3>Added</h3><ul>
+<li>Support for v2.0.7 of the Adapt Framework</li>
+<li>Optimised build process, i.e. only plugins used are bundled</li>
+<li>Ability to copy the <code>_id</code> value of <code>contentobjects</code>, <code>articles</code>, <code>blocks</code> and <code>components</code> to clipboard</li>
+<li>Ability to easily change component layouts without using drag and drop</li>
+<li>Ability to export the source code of a particular course</li>
+<li>Caching added to assets to improve performance</li>
+</ul><h3>Changed</h3><ul>
+<li><code>_isAvailableInEditor</code> flag persisted when a new plugin is uploaded</li>
+<li>Optimised performance of processing course assets in preview/download</li>
+<li>Preview redirects to index.html rather than main.html</li>
+<li>The count of failed logins is reset after a successful login</li>
+<li>Turned off automatic population of display title for blocks</li>
+</ul><h3>Fixed</h3><ul>
+<li>Non-essential attributes removed from <code>course.json</code></li>
+<li>ACE JavaScript error when creating a new course</li>
+<li>Hard 100kb limit on JSON payload</li>
+<li>Corrected Project Details save issue</li>
+</ul><h2><a href="https://github.com/adaptlearning/adapt_authoring/compare/v0.1.3...v0.1.4">0.1.4</a> - 2015-11-25</h2><p>Release to add support for Node.js v4.2.2 LTS.</p><h3>Added</h3><ul>
+<li>Support for Node.js v4.2.2 LTS</li>
+<li>Support for generating JavaScript source maps on preview or download (via Configuration Settings)</li>
+<li>Support for Vagrant</li>
+<li>Support for JSCS</li>
+</ul><h3>Changed</h3><ul>
+<li>Locking the Title and Display Title by default</li>
+<li>Renamed &apos;Publish&apos; button to &apos;Download&apos;</li>
+<li>Updated package dependencies to correct security issues</li>
+<li>Assets can now be defined in <code>articles.json</code></li>
+<li>Tag length has been increased to 30 characters</li>
+</ul><h3>Fixed</h3><ul>
+<li>Error on copying and pasting a block</li>
+<li>Custom CSS/LESS not pulling through</li>
+<li><code>_supportedLayout</code> not working correctly</li>
+</ul><h2><a href="https://github.com/adaptlearning/adapt_authoring/compare/v0.1.2...v0.1.3">0.1.3</a> - 2015-10-21</h2><p>Bugfix release.</p><h3>Added</h3><ul>
+<li>Support for MongoDB <code>replicasets</code></li>
+<li>More robust processing for missing schema pluginLocations</li>
+<li>Support for <code>_accessibility</code> added to Configuration Settings</li>
+<li>Support for screen breakpoints added to Configuration Settings</li>
+<li>Added security to preview route</li>
+</ul><h3>Changed</h3><ul>
+<li>Standardised notifications and implemented SweetAlert library</li>
+<li>Bumped CKEditor version to 4.5.4</li>
+</ul><h3>Fixed</h3><ul>
+<li>Page and menu/sections were created without a <code>linkText</code> property set</li>
+<li>IE9 issue with editor and list formatting</li>
+<li>Problem with <code>isAssetExternal()</code></li>
+<li>Dashboard problems when a hero image is not set</li>
+<li>Added validation for length of database name</li>
+<li>Added validation to Configuration Settings</li>
+</ul><h2><a href="https://github.com/adaptlearning/adapt_authoring/compare/v0.1.1...v0.1.2">0.1.2</a> - 2015-09-30</h2><p>Bugfix release.</p><h3>Added</h3><ul>
+<li>Support for <code>_isOptional</code> (Adapt Framework v2.x)</li>
+<li>Support for accessibility (Adapt Framework v2.x)</li>
+<li>Support for plugin &apos;globals&apos; (Adapt Framework v2.x)</li>
+<li>Improved install/upgrade</li>
+<li>&apos;Global&apos; configurations for plugins are conditionally applied</li>
+<li>Added basic browser-based spell-check to HTML editor</li>
+<li>Table editing is now an option on the HTML editor</li>
+<li>Any <code>&lt;span&gt;</code> tag added in the HTML editor is now preserved</li>
+<li>Support for &apos;Autofill&apos; on graphic components</li>
+<li>Confirmation when deleting a component/extension item, such as a narrative or question stem</li>
+<li>Ability to delete assets</li>
+<li>Support for Adapt Framework v2.x assessment extension</li>
+</ul><h3>Changed</h3><ul>
+<li>Course now has a Display Title property</li>
+<li>Default plugins are now taken from the framework <code>adapt.json</code> file, hard-coded references to plugins are</li>
+<li>Removed the dependency on adapt-cli</li>
+<li>Added better logging for Validation Failed errors on database operations</li>
+<li>Remove hard-coded references to core plugins</li>
+<li>Upgrade to Express 4, support NodeJS 0.12.6 (removed hard dependency on 0.10.33)</li>
+<li>Any <code>logger.log()</code> calls now support placeholders properly</li>
+<li>Authoring tool specific properties now removed from output JSON</li>
+<li>Updated logo</li>
+</ul><h3>Fixed</h3><ul>
+<li>Course tags lost when a hero image is added or removed</li>
+<li>Broken preview and publish after deleting asset</li>
+<li>Tutor extension breaks configuration screen</li>
+<li>Asset collection not displaying results when a small number of records should have been retrieved</li>
+<li>Component type label gets lost on plugin upgrade</li>
+<li>500 error when updating plugins with framework v1.1.5</li>
+<li>Resource link save errors</li>
+<li>Assets on moved components hold reference to previous block</li>
+<li>When ffmpeg is not installed, the thumbnailPath &apos;none&apos; causes issues with routers</li>
+<li>Deleting an article or page does not remove associated assets contained with in</li>
+<li>Modal overlay has a few responsive issues when appending content/custom editing views</li>
+<li>Issue with long list item attribute values going outside of the list item box</li>
+<li>Issue with nested items in backbone forms showing as <code>[object Object]</code></li>
+<li>Course tags were removed when a hero image was added or removed</li>
+</ul><h2><a href="https://github.com/adaptlearning/adapt_authoring/compare/v0.1.0...v0.1.1">0.1.1</a> - 2015-03-12</h2><p>Large bugfix release.</p><h2>Upgrade Notes</h2><p>If upgrading from a previous version, please add the following keys to your config.json</p><ul>
+<li><code>outputPlugin</code> -&gt; <code>adapt</code></li>
+<li><code>masterTenantName</code> -&gt; {name of the folder containing your master tenant files}</li>
+<li><code>masterTenantID</code> - {MongoDB <code>_id</code> of the initial first row in the <code>tenants</code> collection}</li>
+</ul><h3>Added</h3><ul>
+<li>Support for client-side configs</li>
+<li>Proper support for shared courses</li>
+<li>Poster images now available on courses</li>
+<li>Progress indicator on preview</li>
+<li>Support for <code>_trackingId</code> values</li>
+</ul><h3>Changed</h3><ul>
+<li>Role permissions synced on a server restart</li>
+<li>Re-factoring of build process</li>
+<li>Install process updated</li>
+</ul><h3>Fixed</h3><ul>
+<li>Minor IE9 fixes</li>
+<li>Corrected &apos;Back to courses&apos; button</li>
+<li>Missing language strings</li>
+<li>Fixes around drag and drop, copy and paste</li>
+<li>Asset manager filters</li>
+<li>General UI fixes</li>
+<li>Fixes with theme and menu selection to persist selection after new versions are installed</li>
+<li>Various context menu issues</li>
+</ul><h2><a href="https://github.com/adaptlearning/adapt_authoring/tree/v0.1.0">0.1.0</a> - 2015-01-26</h2><p>Initial release.</p><h3>Added</h3><ul>
+<li>Support for menu selection</li>
+<li>Support to load configuration from process.env</li>
+<li>Support for nested properties in component schemas</li>
+<li>Tag autocompletion</li>
+<li>Added indicator to feedback on saving status</li>
+<li>Added &quot;Remember Me&quot; functionality</li>
+<li>Asset upload from within asset manager</li>
+<li>Progressive loading of assets</li>
+<li>Progressive loading of dashboard</li>
+<li>Now storing first and last login for user</li>
+</ul><h3>Changed</h3><ul>
+<li>Replaced editor with CKEditor</li>
+<li>Improved performance with policy files and permissions</li>
+<li>Clear permission cache on role adjustment</li>
+<li>Switched to cli installer</li>
+<li>Made the dashboard pluggable</li>
+<li>Copy/paste moved to server-side</li>
+<li>Content plugins preloaded on server boot</li>
+<li>Asset records now use relative paths</li>
+</ul><h3>Removed</h3><ul>
+<li>iframe previews</li>
+<li>Sockets.io (for now...)</li>
+</ul><h3>Fixed</h3><ul>
+<li>Issue with tags input in IE9</li>
+<li>Issue where project settings caused a javascript error</li>
+<li>Issue with uploading gifs would fail</li>
+<li>Issues with course duplication</li>
+<li>Issues with <code>bowercache</code> file locking</li>
+<li>Issues with drag and drop in page editor</li>
+<li>Loading screen of death</li>
+<li>Session cookie security issues</li>
+</ul></div>
+        <a data-ice="link" href="manual/CHANGELOG.html"></a>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

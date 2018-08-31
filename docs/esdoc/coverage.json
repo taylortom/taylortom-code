@@ -1,0 +1,88 @@
+{
+  "coverage": "67.27%",
+  "expectCount": 55,
+  "actualCount": 37,
+  "files": {
+    "node_modules/adapt-authoring-core/lib/app.js": {
+      "expectCount": 6,
+      "actualCount": 3,
+      "undocumentLines": [
+        5,
+        26,
+        30
+      ]
+    },
+    "node_modules/adapt-authoring-core/lib/module.js": {
+      "expectCount": 9,
+      "actualCount": 9,
+      "undocumentLines": []
+    },
+    "node_modules/adapt-authoring-core/lib/moduleloader.js": {
+      "expectCount": 10,
+      "actualCount": 10,
+      "undocumentLines": []
+    },
+    "node_modules/adapt-authoring-core/lib/rest.js": {
+      "expectCount": 6,
+      "actualCount": 2,
+      "undocumentLines": [
+        12,
+        16,
+        20,
+        24
+      ]
+    },
+    "node_modules/adapt-authoring-helloworld/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "node_modules/adapt-authoring-helloworld/lib/helloworld.js": {
+      "expectCount": 4,
+      "actualCount": 3,
+      "undocumentLines": [
+        2
+      ]
+    },
+    "node_modules/adapt-authoring-logger/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "node_modules/adapt-authoring-logger/lib/logger.js": {
+      "expectCount": 5,
+      "actualCount": 2,
+      "undocumentLines": [
+        3,
+        21,
+        26
+      ]
+    },
+    "node_modules/adapt-authoring-server/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "node_modules/adapt-authoring-server/lib/middleware.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "node_modules/adapt-authoring-server/lib/server.js": {
+      "expectCount": 11,
+      "actualCount": 7,
+      "undocumentLines": [
+        4,
+        6,
+        18,
+        19
+      ]
+    }
+  }
+}
