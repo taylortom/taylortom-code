@@ -1,1 +1,1 @@
-An Adapt framework theme based on Adapt's community site.
+An Adapt framework theme based on Adapt's community site. Compatible with, and configurable in the Adapt authoring tool.
