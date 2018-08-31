@@ -1,3 +1,3 @@
-My final year university project, which was an experiment into utilising academic machine learning techniques in a game context. 
+Final year university project investigating academic machine learning techniques in games. 
 
-Build around a basic Lemmings-inspired game, the system aims to train a number of AI-controlled agents to safely navigate the game world.
+Using a Lemmings-inspired context, the system aims to train a number of AI-controlled agents to safely navigate the game levels.
