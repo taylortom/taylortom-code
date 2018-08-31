@@ -1,0 +1,23 @@
+[
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "Text",
+    "displayTitle": "Kineo helps the world's leading businesses improve performance through learning and technology.",
+    "body": "<p>We combine quality in learning with award-winning customer service and innovation.&nbsp;</p><p>We're here to take on your learning and performance challenges - and deliver results. So, how can we help you?</p><ul><li>Platinum Partners of open-source Totara Learn: from focused portals to enterprise LMS solutions.</li><li>Designed specifically for your needs and tailored to your context and your audience.&nbsp;</li><li>Off-the-shelf, multi-device elearning solution developed to meet your training needs.</li><li>One version of elearning that runs on all devices: we’ve worked hard to make it easy.</li><li>Effective learning starts with powerful design and delivery, but it doesn’t end there.<p>&nbsp;</p></li></ul>",
+    "instruction": "",
+    "_id": "5b449ad7d8c298b74debfd09",
+    "_parentId": "5b449ad7d8c298b74debfd08",
+    "_type": "component",
+    "_layout": "full",
+    "_onScreen": {
+      "_isEnabled": false,
+      "_classes": "",
+      "_percentInviewVertical": 50
+    }
+  }
+]
