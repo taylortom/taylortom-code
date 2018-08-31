@@ -1,0 +1,1 @@
+An electron-based front-end for my staticsite-cli tool.

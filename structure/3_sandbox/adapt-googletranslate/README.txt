@@ -1,0 +1,1 @@
+An Adapt framework plugin to translate content using Google translate.

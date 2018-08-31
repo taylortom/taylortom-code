@@ -1,0 +1,1 @@
+A presentation for the Adapt Meetup Vienna 2017 built in Adapt. Includes several custom presentation-friendly plugins.
