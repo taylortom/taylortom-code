@@ -15,8 +15,8 @@
 		<style>
 		body {
 			background-color: black;
-			font-family: monospace;
-			font-size: 15px;
+			font-family: 'Space mono', monospace;
+			font-size: 90%;
 			color: white;
 			margin: 0 20px;
 		}
@@ -164,4 +164,5 @@
 			<div class="footer">Marginally better code available at <a href="//www.github.com/taylortom">@taylortom</a> on GitHub (no guarantees made).</div>
 		</div>
 	</body>
+	<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
 </html>
