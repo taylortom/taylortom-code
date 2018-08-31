@@ -1,0 +1,1 @@
+Aggregates the most-voted-for GitHub issues on the  adapt_authoring repo
