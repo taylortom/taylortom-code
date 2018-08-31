@@ -54,7 +54,7 @@ var updateStat = function(statName) {
 };
 
 var celebrate = function() {
-  $('img').removeClass('display-none');
+  $('.image').removeClass('display-none');
 };
 
 var Unit = function(unitName) {
@@ -140,7 +140,7 @@ var doMems = function() {
     if($('.mems > ul').length === 0) {
       $('.mems').closest('.content-block').remove();
     } else {
-      $('.mems').closest('.content-block').show();
+      $('.mems').closest('.content-block').removeClass('display-none');
     }
   }).fail(function(jqXHR, textStatus, errorThrown) {
     console.log('Failed to load JSON,', textStatus + ':', errorThrown);
