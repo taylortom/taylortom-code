@@ -19,6 +19,7 @@
 			font-size: 90%;
 			color: white;
 			margin: 0 20px;
+			overflow-y: scroll;
 		}
 		a {
 			color: white;
@@ -137,6 +138,10 @@
 				width: 100%;
 			}
 		}
+
+		.display-none {
+			display: none;
+		}
 		</style>
 		<?php
 		include_once("analyticstracking.php");
@@ -149,7 +154,7 @@
 					continue;
 				}
 				if(is_dir($root . $value)) {
-					echo '<div class="' . $value . ' group">';
+					echo '<div class="' . $value . ' group display-none">';
 						echo '<div class="title">' . $value . '</div>';
 						listDir($root.$value.'/');
 					echo '</div>';
@@ -172,7 +177,7 @@
  				if(is_dir('./' . $dir . $value)) {
 					$className = (($i++ % 2) === 0) ? 'even' : 'odd';
 					$text = @file_get_contents('./' . $dir . $value . '/README.txt');
-					echo '<div class="project ' . $className . '">';
+					echo '<div class="project display-none ' . $className . '">';
 					echo '<div class="name">> ' . $value . '</div>';
 					echo '<div class="description">';
 					if($text) echo '<div class="text">' . $text . '</div>';
@@ -186,23 +191,67 @@
 		<div class="page">
 			<div class="title"><span class="caret">>></span><span class="titletext"></span><div class="cursor"></div></div>
 			<?php createGroups(); ?>
-			<div class="footer">Marginally better code available at <a href="//www.github.com/taylortom">@taylortom</a> on GitHub (no guarantees made).</div>
+			<div class="footer display-none">Marginally better code available at <a href="//www.github.com/taylortom">@taylortom</a> on GitHub (no guarantees made).</div>
 		</div>
 	</body>
 	<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
 	<script type="text/javascript">
-		function type() {
+		function doAnimation() {
+			type(function() {
+				showItems();
+			});
+		}
+
+		function type(done) {
 			var message = "<?php echo  getenv('HTTP_HOST') ?>";
 			var el = document.querySelector('.titletext');
 			el.textContent = "";
 			var interval = setInterval(function() {
 				var textLength = el.textContent.length;
 				if(textLength === message.length) {
-					return clearInterval(interval);
+					clearInterval(interval);
+					return done();
 				}
 				el.textContent += message[textLength];
 			}, 100);
 		}
-		setTimeout(type, 500);
+
+		function showItems() {
+			var groups = document.querySelectorAll('.group');
+			var i = 0;
+			(function __showItems() {
+				if(i >= groups.length) {
+					showElement(document.querySelector('.footer'));
+					return;
+				}
+				showGroup(groups[i++], __showItems);
+			})();
+		}
+
+		function showGroup(group, done) {
+			setTimeout(function() {
+				showElement(group);
+				var projects = group.querySelectorAll('.project');
+				var i = 0;
+				(function __showProjects() {
+					if(i >= projects.length) return done();
+					showProject(projects[i++], projects[i++], __showProjects);
+				})();
+			}, 500);
+		}
+
+		function showProject(project1, project2, done) {
+			setTimeout(function() {
+				if(project1) showElement(project1);
+				if(project2) showElement(project2);
+				done();
+			}, 150);
+		}
+
+		function showElement(el) {
+			el.className = el.className.replace('display-none', '');
+		}
+		// leave a bit of a delay before starting
+		setTimeout(doAnimation, 500);
 	</script>
 </html>
