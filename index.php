@@ -15,6 +15,8 @@
 		<style>
 		body {
 			background-color: black;
+			background-image: url(/bg.png);
+			background-attachment: fixed;
 			font-family: 'Share Tech Mono', monospace;
 			font-size: 90%;
 			color: white;

@@ -1,0 +1,217 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding-bottom: 50px;
+}
+
+a {
+  color: inherit;
+}
+
+.loading {
+  height: 30px;
+}
+.loading .bar {
+  display: none;
+  height: 5px;
+  width: 100%;
+  background-color: #fafbfc;
+}
+.loading .bar .inner {
+  background-color: #bfccd1;
+  height: 100%;
+  width: 0;
+}
+
+.no-prs {
+  margin: 50px 0 50px 0;
+  text-align: center;
+  opacity: 0.5;
+}
+
+header {
+  background-color: #fafbfc;
+  border-bottom: 1px solid #bfccd1;
+  padding-top: 20px;
+}
+header > .inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.reviewers {
+  display: inline-block;
+  text-decoration: underline;
+}
+.reviewers .overlay {
+  position: absolute;
+  margin-top: 10px;
+  display: none;
+  background-color: white;
+  border: 1px solid #bfccd1;
+  border-radius: 3px;
+  padding: 10px;
+}
+.reviewers:hover .overlay {
+  display: block;
+}
+
+.select {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.select-label {
+  font-weight: 500;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+
+body > .inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.prs {
+  margin-top: 30px;
+  border: 1px solid #bfccd1;
+  border-radius: 2px;
+}
+
+.pr {
+  border-left: 5px solid black;
+  border-bottom: 1px solid #bfccd1;
+  padding: 8px;
+}
+.pr:hover {
+  background-color: #fafbfc;
+  cursor: pointer;
+}
+
+.pr.approved {
+  border-left-color: #2cbe4e;
+  background-color: #d3ffdd;
+}
+.pr.approved .controls { background-color: #2cbe4e }
+.pr.approved:hover {
+  background-color: #beffcd;
+}
+.pr.rejected {
+  border-left-color: #cb2431;
+  background-color: #ffe1e4;
+}
+.pr.approved .controls { background-color: #cb2431 }
+.pr.rejected:hover {
+  background-color: #ffd4d8;
+}
+
+.pr.approved { color: #2cbe4e; }
+span.approved { color: #2cbe4e; }
+
+.pr.rejected { color: #cb2431; }
+
+.pr .status {
+  padding: 0 3px;
+  margin-left: 10px;
+  font-size: 80%;
+  color: white;
+  border-radius: 3px;
+  text-decoration: none;
+}
+.pr .status:hover {
+  text-decoration: underline;
+}
+
+.pr .status.pending { background-color: #ffc107; }
+.pr .status.success { background-color: #2cbe4e; }
+.pr .status.fail, .pr .status.error { background-color: #cb2431; }
+
+.pr.no-reviews {
+  border-left-color: #a2b1b7;
+  color: #a2b1b7;
+}
+
+.pr .title {
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.pr .title .author {
+  display: inline-block;
+  font-weight: 300;
+}
+.pr .title a.author {
+  text-decoration: underline;
+  font-weight: 400;
+}
+.pr .title a.author:hover {
+  color: blue;
+}
+.pr .body {
+  display: none;
+}
+.pr .reviews {
+  margin-top: 10px;
+  font-size: 90%;
+}
+.pr .reviews > div {
+  margin-bottom: 5px;
+}
+.pr:hover .reviews {
+  display: block;
+}
+
+.pr a.patch {
+  font-size: 90%;
+}
+.pr a.patch:hover {
+  font-weight: bold;
+}
+
+.key {
+  text-align: center;
+}
+.key.disabled {
+  display: none;
+}
+.key .pr-container {
+  display: inline-block;
+  padding-bottom: 3px;
+  margin-right: 15px;
+}
+.key .pr-container.enabled {
+  border-bottom: 2px solid #03A9F4;
+}
+
+.key .pr {
+  width: 225px;
+  display: inline-block;
+  font-size: 80%;
+  padding: 4px;
+}
+
+.footer {
+  text-align: center;
+  margin: 30px 0 30px 0;
+}
+.footer .code {
+  font-size: 120%;
+  font-weight: 500;
+}
+.footer a {
+  margin-bottom: 3px;
+  border-bottom: 1px solid black;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: blue;
+  border-color: blue;
+}

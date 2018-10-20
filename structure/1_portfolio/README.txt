@@ -1,0 +1,1 @@
+Some interesting projects which may be suitable for inspection (no promises). Demos linked, or where not applicable, the source code.

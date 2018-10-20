@@ -1,0 +1,1 @@
+A simple REST API for a customer CRM. Built in Symfony 4 (PHP 7, MySQL).
