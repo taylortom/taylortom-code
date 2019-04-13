@@ -105,8 +105,9 @@
 			padding-bottom: 10px;
 		}
 		.project a {
-			display: block;
+			display: inline-block;
 			text-decoration: none;
+			margin-right: 5px;
 			padding: 3px;
 			border: 2px solid white;
 			border-radius: 3px;
@@ -114,6 +115,9 @@
 			text-align: center;
 			color: white;
 			cursor: pointer;
+		}
+		.project a:last-child {
+			margin-right: 0;
 		}
 		.project a:hover {
 			background-color: white;
@@ -156,8 +160,8 @@
 					continue;
 				}
 				if(is_dir($root . $value)) {
-					echo '<div class="' . $value . ' group display-none">';
-						echo '<div class="title">' . $value . '</div>';
+					echo '<div class="'.$value.' group display-none">';
+						echo '<div class="title">'.$value.'</div>';
 						listDir($root.$value.'/');
 					echo '</div>';
 		    }
@@ -166,27 +170,32 @@
 		function listDir($dir) {
 			$root = "/var/sites/c/code.tomtaylor.name/public_html/structure/";
 			// try and load the description readme
-			$desc = @file_get_contents('./' . $dir . '/README.txt');
-			if($desc) {
-				echo '<div class="description">' . $desc . '</div>';
-			}
-			$dirs = scandir($dir);
+			$desc = @file_get_contents('./'.$dir.'/README.txt');
+			if($desc) echo '<div class="description">'.$desc.'</div>';
 			$i = 1;
-			foreach ($dirs as $key => $value) {
+			foreach(scandir($dir) as $key => $value) {
 				if('.' === $value || '..' === $value) {
 					continue;
 				}
- 				if(is_dir('./' . $dir . $value)) {
-					$className = (($i++ % 2) === 0) ? 'even' : 'odd';
-					$text = @file_get_contents('./' . $dir . $value . '/README.txt');
-					echo '<div class="project display-none ' . $className . '">';
-					echo '<div class="name">> ' . $value . '</div>';
-					echo '<div class="description">';
-					if($text) echo '<div class="text">' . $text . '</div>';
-					echo '<a href="' . $dir . $value . '" target="_blank">View</a>';
-					echo '</div>';
-					echo '</div>';
+				$subdir = $dir . $value;
+
+ 				if(!is_dir('./'.$subdir)) {
+					continue;
 				}
+				$className = (($i++ % 2) === 0) ? 'even' : 'odd';
+				$text = @file_get_contents('./'.$subdir.'/README.txt');
+				$demofile = $subdir.'/demo.html';
+				$sitefile = $subdir.'/index.html';
+				$srcfile = $subdir.'/source.html';
+				echo '<div class="project display-none '.$className.'">';
+				echo '<div class="name">> '.$value.'</div>';
+				echo '<div class="description">';
+				if($text) echo '<div class="text">'.$text.'</div>';
+				if(file_exists('./'.$demofile)) echo '<a href="'.$demofile.'" target="_blank">Demo</a>';
+				if(file_exists('./'.$srcfile)) echo '<a href="'.$srcfile.'" target="_blank">Source</a>';
+				if(file_exists('./'.$sitefile)) echo '<a href="'.$sitefile.'" target="_blank">View</a>';
+				echo '</div>';
+				echo '</div>';
 			}
 		}
 		?>
