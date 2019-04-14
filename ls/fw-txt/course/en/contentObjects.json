@@ -1,0 +1,49 @@
+[
+  {
+    "title": "Leading Operations",
+    "displayTitle": "Leading Operations",
+    "body": "",
+    "_classes": "",
+    "pageBody": "",
+    "linkText": "View",
+    "duration": "",
+    "_lockedBy": [],
+    "_lockType": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863b3",
+    "_type": "page",
+    "_parentId": "course",
+    "_graphic": {
+      "alt": "",
+      "src": "course/en/assets/9c0d1a80a1b8e0277e643c8d3d6df441af8dd9c6.jpg"
+    },
+    "_backgroundSwitcher": {
+      "_isActive": true
+    },
+    "_footer": {
+      "_isEnabled": true,
+      "_footerDetails": {
+        "title": "OMS Academy Portal",
+        "email": "omsacademy@uk.bp.com",
+        "copy": "BP 2017"
+      },
+      "_footerLink": {
+        "title": "Part of BP University",
+        "linkUrl": "//bpuniversity.bpglobal.com/omsa/",
+        "linkSrc": "",
+        "linkText": "OMS<span>Academy</span>",
+        "targetBlank": true
+      }
+    },
+    "bp_boa_theme": {
+      "_headerImage": {
+        "_small": "",
+        "_medium": "",
+        "_large": ""
+      }
+    }
+  }
+]

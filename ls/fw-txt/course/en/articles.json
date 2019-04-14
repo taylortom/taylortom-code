@@ -1,0 +1,162 @@
+[
+  {
+    "title": "article title",
+    "displayTitle": "What makes satisfying work?",
+    "body": "<p>As a leader, you have the opportunity to make sure that your teams find their work as satisfying as possible. But how do you do this in a large organization like BP? We operate in complex and sometimes challenging conditions, where we strive to be efficient and productive. What part do your leadership skills play in shaping our future? Find out in this topic.&nbsp;</p>\n\n<p>&nbsp;</p>\n",
+    "_classes": "header-dt",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863b4",
+    "_type": "article",
+    "_parentId": "5bb924350f02597f5af863b3",
+    "_articleBlockSlider": {
+      "_isEnabled": false,
+      "_slideAnimationDuration": 600,
+      "_heightAnimationDuration": 300,
+      "_isEnabledOnScreenSizes": "large",
+      "_hasTabs": false,
+      "_hasArrows": true,
+      "_startIndex": 1,
+      "_hasUniformHeight": true,
+      "_minHeight": null
+    },
+    "_articleReveal": {
+      "_classes": "",
+      "_icon-text": "REVEAL",
+      "_closeButtonText": "CLOSE",
+      "_ariaLabels": {
+        "openArticle": "",
+        "closeArticle": ""
+      },
+      "_ariaRegions": {
+        "articleReveal": ""
+      },
+      "_backgroundImage": "",
+      "_mobileBackgroundImage": "",
+      "_isEnabled": false
+    }
+  },
+  {
+    "title": "A game of golf  ",
+    "displayTitle": "A game of golf  ",
+    "body": "<p>Golf is a great example of a task that is engaging due to these four features.</p>\n\n<p><strong>Select the arrow to find out more.</strong></p>\n",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863b5",
+    "_type": "article",
+    "_parentId": "5bb924350f02597f5af863b3",
+    "_articleReveal": {
+      "_isEnabled": false,
+      "_mobileBackgroundImage": "",
+      "_backgroundImage": "",
+      "_ariaRegions": {
+        "articleReveal": ""
+      },
+      "_ariaLabels": {
+        "closeArticle": "",
+        "openArticle": ""
+      },
+      "_closeButtonText": "CLOSE",
+      "_icon-text": "REVEAL",
+      "_classes": ""
+    },
+    "_articleBlockSlider": {
+      "_minHeight": 448,
+      "_hasUniformHeight": true,
+      "_startIndex": 0,
+      "_hasArrows": true,
+      "_hasTabs": false,
+      "_isEnabledOnScreenSizes": "large",
+      "_heightAnimationDuration": 300,
+      "_slideAnimationDuration": 600,
+      "_isEnabled": true
+    }
+  },
+  {
+    "title": "Article title",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863b6",
+    "_type": "article",
+    "_parentId": "5bb924350f02597f5af863b3",
+    "_articleReveal": {
+      "_classes": "",
+      "_icon-text": "REVEAL",
+      "_closeButtonText": "CLOSE",
+      "_ariaLabels": {
+        "openArticle": "",
+        "closeArticle": ""
+      },
+      "_ariaRegions": {
+        "articleReveal": ""
+      },
+      "_backgroundImage": "",
+      "_mobileBackgroundImage": "",
+      "_isEnabled": false
+    },
+    "_articleBlockSlider": {
+      "_isEnabled": false,
+      "_slideAnimationDuration": 600,
+      "_heightAnimationDuration": 300,
+      "_isEnabledOnScreenSizes": "large",
+      "_hasTabs": false,
+      "_hasArrows": true,
+      "_startIndex": 0,
+      "_hasUniformHeight": true,
+      "_minHeight": null
+    }
+  },
+  {
+    "title": "Article reveal",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863b7",
+    "_type": "article",
+    "_parentId": "5bb924350f02597f5af863b3",
+    "_articleReveal": {
+      "_classes": "",
+      "_icon-text": "REVEAL MORE",
+      "_closeButtonText": "CLOSE",
+      "_ariaLabels": {
+        "openArticle": "",
+        "closeArticle": ""
+      },
+      "_ariaRegions": {
+        "articleReveal": ""
+      },
+      "_backgroundImage": "",
+      "_mobileBackgroundImage": "",
+      "_isEnabled": true
+    },
+    "_articleBlockSlider": {
+      "_isEnabled": false,
+      "_slideAnimationDuration": 600,
+      "_heightAnimationDuration": 300,
+      "_isEnabledOnScreenSizes": "large",
+      "_hasTabs": false,
+      "_hasArrows": true,
+      "_startIndex": 0,
+      "_hasUniformHeight": true,
+      "_minHeight": null
+    }
+  }
+]

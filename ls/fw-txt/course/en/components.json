@@ -1,0 +1,463 @@
+[
+  {
+    "_component": "blank",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "Component title",
+    "displayTitle": "Component title",
+    "body": "",
+    "instruction": "",
+    "_id": "5bb924350f02597f5af863c9",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863c8",
+    "_layout": "full"
+  },
+  {
+    "_component": "blank",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "Component title",
+    "displayTitle": "Component title",
+    "body": "",
+    "instruction": "",
+    "_id": "5bb924350f02597f5af863ca",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863bb",
+    "_layout": "full"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "Component title",
+    "displayTitle": "",
+    "body": "<p>The same idea applies to almost any sport or hobby that people enjoy &ndash; tennis, cooking, music or whatever it may be.&nbsp;</p>\n\n<p>What do you like to do in your spare time? The chances are it&rsquo;s the type of activity that provides fairly immediate feedback about whether you&#39;re doing a good job or a bad job, whilst offering lots of opportunities for improvement. You can take lessons with an instructor, watch videos, learn new techniques&hellip; If there was no opportunity to build your skills and capabilities, you&rsquo;d probably start to get bored. We all have that strong developmental drive to get better.<br />\n<br />\nWhen evaluating a piece of work, the sport or hobby metaphor can be a good lens to view it through to check whether it has the elements that are likely to make it engaging. Can people get rapid feedback, are there opportunities for improvement and is it possible to set goals that are just beyond the person&#39;s current ability level?</p>\n",
+    "instruction": "",
+    "_id": "5bb924350f02597f5af863cb",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863bc",
+    "_layout": "full"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "Real-world case studies",
+    "displayTitle": "Real-world case studies",
+    "body": "<p>Applying what we know today about how to create engaging work isn&rsquo;t always easy. Some organizations have tried to do it&nbsp;by changing some of their more repetitive processes. They&rsquo;ve had varying degrees of success.</p>\n",
+    "instruction": "",
+    "_id": "5bb924350f02597f5af863cc",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863bd",
+    "_layout": "full"
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "In the factory  ",
+    "displayTitle": "In the factory  ",
+    "body": "<p>One car production plant experimented with the idea of workers taking on the assembly of a whole car, rather than only seeing one specific stage of the process on the assembly line. This allowed them to apply more varied skills in their work, experience greater control and receive more feedback on their overall progress.</p>\n",
+    "instruction": "",
+    "_id": "5bb924350f02597f5af863cd",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863c1",
+    "_layout": "left",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/4683e9fcca002a163cbd8b8d6efeaa5d9a10aa1b.jpg",
+      "small": "course/en/assets/4683e9fcca002a163cbd8b8d6efeaa5d9a10aa1b.jpg",
+      "attribution": ""
+    }
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "Engaging our people",
+    "displayTitle": "Engaging our people",
+    "body": "<p>So how do we design engaging work? Research shows that people are more engaged with&nbsp;tasks when:</p>\n",
+    "instruction": "",
+    "_id": "5bb924350f02597f5af863ce",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863c6",
+    "_layout": "full",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/68e245adcd257790a0d43875043d6480a676a579.jpg",
+      "small": "course/en/assets/68e245adcd257790a0d43875043d6480a676a579.jpg",
+      "attribution": ""
+    }
+  },
+  {
+    "_component": "slider",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "Pause for thought",
+    "displayTitle": "Pause for thought",
+    "body": "<p>Think about your own teams and the types of work they&rsquo;re completing at the moment.</p>\n\n<p>On a scale of 1-10, how satisfying is the work for the people who do it?</p>\n",
+    "instruction": "Slide and select Submit. ",
+    "_id": "5bb924350f02597f5af863cf",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863be",
+    "_layout": "full",
+    "_attempts": 1,
+    "_canShowModelAnswer": false,
+    "_shouldDisplayAttempts": false,
+    "_questionWeight": 1,
+    "_recordInteraction": true,
+    "labelStart": "",
+    "labelEnd": "",
+    "_scaleStart": 1,
+    "_scaleEnd": 10,
+    "_scaleStep": 1,
+    "_correctAnswer": "",
+    "_correctRange": {
+      "_bottom": 6,
+      "_top": 10
+    },
+    "_showNumber": true,
+    "_showScaleIndicator": true,
+    "_showScale": true,
+    "_buttons": {
+      "_submit": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_reset": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_hideCorrectAnswer": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "_showFeedback": {
+        "buttonText": "",
+        "ariaLabel": ""
+      },
+      "remainingAttemptsText": "",
+      "remainingAttemptText": ""
+    },
+    "_feedback": {
+      "correct": "<p>You feel quite positive about your team&rsquo;s attitude towards their work, but there may still be areas where things could further improve.</p>\n\n<p>As leaders, we all need to consider the question of<strong><em> why</em></strong> people come to work.</p>\n\n<p>Money does matter, but our happiness and engagement at work can be strongly influenced by other factors. Before exploring what these are, let&rsquo;s look at how far we have come in our understanding about what motivates us at work.</p>\n",
+      "_incorrect": {
+        "final": "<p>You have some concerns about how satisfied your teams are with their work. As leaders, we all need to consider the question of <strong><em>why</em></strong> people come to work.</p>\n\n<p>Money does matter, but our happiness and engagement at work can be strongly influenced by other factors. Before exploring what these are, let&rsquo;s look at how far we have come in our understanding about what motivates us at work.</p>\n",
+        "notFinal": ""
+      },
+      "_partlyCorrect": {
+        "final": "",
+        "notFinal": ""
+      }
+    }
+  },
+  {
+    "_component": "graphic",
+    "_classes": "graphic-attr-as-body-text",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "032",
+    "displayTitle": "",
+    "body": "",
+    "instruction": "",
+    "_id": "5bb924350f02597f5af863d0",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863c1",
+    "_layout": "right",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/29dcde415298e110fa7034d90634d020ec546ab1.jpg",
+      "small": "course/en/assets/29dcde415298e110fa7034d90634d020ec546ab1.jpg",
+      "attribution": "However, overall production levels fell. The car manufacturer found it was more efficient and therefore more profitable to use a traditional assembly line with individuals focusing on specific tasks.  So does this leave the leaders of today in something of a dilemma?  "
+    }
+  },
+  {
+    "_component": "text",
+    "_classes": "center-align-text",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "Application in the real world",
+    "displayTitle": "Application in the real world",
+    "body": "<p>So far we&rsquo;ve focused on the theory. But how does this apply to the real world?</p>\n",
+    "instruction": "Let’s find out. ",
+    "_id": "5bb924350f02597f5af863d1",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863bf",
+    "_layout": "full"
+  },
+  {
+    "_component": "accordion",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "Warminster: innovation and efficiency",
+    "displayTitle": "Warminster: innovation and efficiency",
+    "body": "<p>The BP Warminster plant has made big strides in improving its working processes to take into account the key features of effective and engaging work.</p>\n",
+    "instruction": "",
+    "_id": "5bb924350f02597f5af863d2",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863c7",
+    "_layout": "full",
+    "_items": [
+      {
+        "title": "Connection to the outcome",
+        "body": "<p>Daily operations meetings are guided through simple but structured visual boards. These give all members of the team a clear picture of where their work fits into the wider goal. This connection with the overall aim is an important feature of effective and engaging work.</p>\n",
+        "_graphic": {
+          "alt": "",
+          "src": "course/en/assets/dcbd0178a9af782b32178fb1e87691960e49397e.jpg"
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Control and involvement",
+        "body": "<p>Meetings are held standing up, to keep them focused, quick and productive. By meeting briefly face to face, problems can be solved then and there rather than through endless, repetitive chains of emails. It also makes sure people&rsquo;s voices are heard and everyone has a sense of control and influence over the process as a whole.</p>\n",
+        "_graphic": {
+          "alt": "",
+          "src": "course/en/assets/055fc91af00d8342999b2669be7f4823f2a6d76a.jpg"
+        },
+        "_classes": ""
+      },
+      {
+        "title": "Communication and feedback",
+        "body": "<p>Efforts have also been made to connect people and raise awareness between departments of how each department&#39;s work impacts other areas of the plant.</p>\n\n<p>For example, it was shown how long set-up times can cause packaging delays and backlogged tanks for blenders (upstream from packaging), shipping delays (downstream of packaging) and problems with schedule adherence, which can disrupt raw material ordering. Connecting with the people who receive the results of a piece of work is a way of getting immediate feedback on what&rsquo;s been done, which increases both engagement and efficiency.</p>\n",
+        "_graphic": {
+          "alt": "",
+          "src": "course/en/assets/3ba57b3853c23ec797500f19468a04e98bbd1832.png"
+        },
+        "_classes": ""
+      }
+    ],
+    "_shouldCollapseItems": true
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "Over to you",
+    "displayTitle": "Over to you",
+    "body": "<p>Think about how the the factors for engaging work could be applied to your own area of the business:</p>\n\n<ul style=\"margin-left: 40px;\">\n\t<li>Do you give immediate, specific performance feedback as regularly as you could?</li>\n\t<li>Does everyone know how their work fits into the bigger picture?</li>\n\t<li>Are there opportunities for your team to apply new or more varied skills?</li>\n\t<li>Could you allow them to experience greater control?</li>\n</ul>\n\n<p>We look in more detail at these and other strategies in other Leading Operations modules.</p>\n",
+    "instruction": "",
+    "_id": "5bb924350f02597f5af863d3",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863ba",
+    "_layout": "full"
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "Component title",
+    "displayTitle": "",
+    "body": "",
+    "instruction": "",
+    "_id": "5bb924350f02597f5af863d4",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863c0",
+    "_layout": "full",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/7cb608c8e33f12054de1168c6267c3b63d473a3c.jpg",
+      "small": "course/en/assets/7cb608c8e33f12054de1168c6267c3b63d473a3c.jpg",
+      "attribution": "<span>Outcome</span>Secondly, although the outcome might not be ‘important’ in terms of changing the world, the player can clearly see the connection that each shot they play has with the overall outcome of the game. Each well-played shot increases their chance of an overall good game.</span>"
+    }
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "Component title",
+    "displayTitle": "",
+    "body": "",
+    "instruction": "",
+    "_id": "5bb924350f02597f5af863d5",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863c2",
+    "_layout": "full",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/407034b751bd1ba1e4f7f63b6e3df925eb47012e.jpg",
+      "small": "course/en/assets/407034b751bd1ba1e4f7f63b6e3df925eb47012e.jpg",
+      "attribution": "<span>Skill</span>Thirdly, golf requires a variety of skills (driving, chipping and putting) and there is a range of opportunities and resources available to help players improve their game.</span>"
+    }
+  },
+  {
+    "_component": "graphic",
+    "_classes": "display-text-right",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "Component title",
+    "displayTitle": "",
+    "body": "",
+    "instruction": "",
+    "_id": "5bb924350f02597f5af863d6",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863b8",
+    "_layout": "full",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/a588d9d34ff0d9a41ee928118ebb26b29cd6bafc.jpg",
+      "small": "course/en/assets/a588d9d34ff0d9a41ee928118ebb26b29cd6bafc.jpg",
+      "attribution": "<span>Control</span>Lastly, the player is generally in control of how the game goes. Each shot or mistake they make affects the end score.</span>"
+    }
+  },
+  {
+    "_component": "media",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "View of leadership in the past",
+    "displayTitle": "View of leadership in the past",
+    "body": "<p>Travel back in time to the 1900s and the view of leadership was quite different.</p>\n",
+    "instruction": "Play the video to find out more.",
+    "_id": "5bb924350f02597f5af863d7",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863c3",
+    "_layout": "full",
+    "_media": {
+      "mp4": "course/en/assets/a35573f2c08c5c8de6b4cd8546b97328105eeeb1.mp4",
+      "ogv": "",
+      "webm": "",
+      "mp3": "",
+      "source": "",
+      "type": "",
+      "poster": "course/en/assets/c793d8ceef14f1fcf73424c2816a313df84da035.jpg",
+      "cc": []
+    },
+    "_setCompletionOn": "play",
+    "_useClosedCaptions": false,
+    "_startLanguage": "en",
+    "_allowFullScreen": false,
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": true,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "Transcript",
+      "inlineTranscriptCloseButton": "Close Transcript",
+      "inlineTranscriptBody": "<p>Frederick Winslow Taylor was one of the first management consultants.</p>\n\n<p>He firmly believed that work should be separated into mental work, to be carried out by managers, and physical work, to be carried out by workers. In other words, separating out &lsquo;those who think&rsquo; from &lsquo;those who do&rsquo;.</p>\n\n<p>He felt that anyone choosing a job as a worker didn&rsquo;t have the mental capacity to do anything other than follow simple instructions. The responsibility of identifying the way to do things fell entirely to managers, and those doing the work were to be given very specific instructions in how to execute their very specific tasks with little if any explanation as to how that work might fit into the larger system or why it might be important.</p>\n\n<p>Fortunately, we now realize how misguided this theory was.</p>\n\n<p>While it&rsquo;s still usually a necessity to have teams run by managers or leaders, we now recognize that every person involved in the process is capable of complex thoughts and able to play an active role in decision-making. &nbsp;</p>\n\n<p>Importantly, it&rsquo;s the front-line workforce who have the knowledge of what&rsquo;s working and what could be improved. They usually become aware of problems &ndash; and potential solutions &ndash; long before more senior leaders do.</p>\n\n<p>Even more importantly, it&rsquo;s the front line that are facing the hazards, so they have the best first-hand knowledge of and often the greatest proximity to the risks. Great leaders listen to their front line very carefully and piece together information that suggests hidden risks.</p>\n\n<p>Wherever people are in the work process, there are some basic thought processes and motivations in common. Understanding what these are can help us design work that is more effective and engaging for everyone.</p>\n",
+      "transcriptLinkButton": "",
+      "transcriptLink": "course/en/assets/da39a3ee5e6b4b0d3255bfef95601890afd80709.mp4"
+    }
+  },
+  {
+    "_component": "media",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "Nelson's view",
+    "displayTitle": "Nelson's view",
+    "body": "<p>As the car manufacturer proved, managers can create work that is highly engaging and results in great innovation. But is this always at the expense of the profitable efficiency that comes with standardization and repetition?</p>\n",
+    "instruction": "Play the video to find out what social scientist Nelson Repenning thinks.",
+    "_id": "5bb924350f02597f5af863d8",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863c4",
+    "_layout": "full",
+    "_media": {
+      "mp4": "course/en/assets/493192c1c74b1a8eb8d499e60814c822145cc0da.mp4",
+      "ogv": "",
+      "webm": "",
+      "mp3": "",
+      "source": "",
+      "type": "",
+      "poster": "course/en/assets/fe083d02bb1cbb24b6d0ac50e63a1f1972f1e0f9.jpg",
+      "cc": []
+    },
+    "_setCompletionOn": "play",
+    "_useClosedCaptions": false,
+    "_startLanguage": "en",
+    "_allowFullScreen": false,
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": true,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "Transcript",
+      "inlineTranscriptCloseButton": "Close Transcript",
+      "inlineTranscriptBody": "<p>In the classical literature on work and organizational design probably the most fundamental trade-off was between engagement and efficiency, meaning that you could either design work that was fun &ndash; people really enjoyed doing it &ndash; or work that was efficient. And the way you would get work typically that was highly efficient is it would be super-repetitive so you&#39;d just be doing the same task day in, day out for your entire career.</p>\n\n<p>And that presented the would-be work designer with sort of a difficult choice, which is I could either have happy employees or I could have really efficient ones that hated their jobs, right. And neither of those seemed like particularly good options. I think what the last 20 or 30 years has shown is that it is possible to break that trade-off and to have work that is both highly efficient and engaging. And the way you do that, essentially, is to engage the people doing the work in the process of making the work better.</p>\n\n<p>And this has the desirable property that you are first capitalizing on all the experience that people accumulate in their heads in doing that repetitive job day in and day out because the brain is constantly searching for new ways to do things better, and as that process continues more and more of the work has actually been designed by the workforce itself and so, therefore, they&#39;re going to be much more committed to following the rules because they were the ones that have had a hand in setting them.</p>\n\n<p>And probably the exemplar of that approach is the famous Toyota production system. Toyota has been at this for 50 years, the work is incredibly well designed, it&#39;s highly repetitive, but most of the good ideas that they have had, that have made it what it is, have come from the workforce itself.&nbsp;</p>\n",
+      "transcriptLinkButton": "",
+      "transcriptLink": ""
+    }
+  },
+  {
+    "_component": "graphic",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "Component title",
+    "displayTitle": "",
+    "body": "",
+    "instruction": "",
+    "_id": "5bb924350f02597f5af863d9",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863b9",
+    "_layout": "full",
+    "_graphic": {
+      "alt": "",
+      "large": "course/en/assets/0a19a918199c80462a6cfce2ca77dbab1da79058.jpg",
+      "small": "course/en/assets/0a19a918199c80462a6cfce2ca77dbab1da79058.jpg",
+      "attribution": "<span>Feedback</span>Firstly, as with many games and sports, the player gets immediate feedback. As soon as the ball is struck, they can tell how well or badly they’ve done.</span>"
+    }
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "title": "Component title",
+    "displayTitle": "",
+    "body": "<p>Although the attitude that workers are there simply to follow orders has been proved to be false, it&#39;s still a view that remains present in many organisations where leaders use a &#39;transactional&#39; approach &ndash;&nbsp;i.e. they try to command and control workers, punishing them when things don&#39;t go to plan.&nbsp;</p>\n\n<p>However, it&#39;s been shown that what is far more effective is a &#39;transformational&#39; leadership style, where leaders consult with their teams, take their feedback on board&nbsp;and recognise that mistakes are often caused by the systems, rather than the people using them.</p>\n",
+    "instruction": "",
+    "_id": "5bb924350f02597f5af863da",
+    "_type": "component",
+    "_parentId": "5bb924350f02597f5af863c5",
+    "_layout": "full"
+  }
+]

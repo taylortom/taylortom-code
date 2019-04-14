@@ -1,0 +1,412 @@
+[
+  {
+    "title": "Block slider - part 1",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "_trackingId": 1,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863b9",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b5",
+    "_backgroundSwitcher": {
+      "_isEnabled": false,
+      "mobileSrc": "",
+      "src": ""
+    }
+  },
+  {
+    "title": "045",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "_trackingId": 2,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863ba",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b7",
+    "_backgroundSwitcher": {
+      "_isEnabled": false,
+      "mobileSrc": "",
+      "src": ""
+    }
+  },
+  {
+    "title": "The role you play",
+    "displayTitle": "The role you play",
+    "body": "<p>Leaders who can motivate, inspire, coach, mentor and support their employees will have teams who consistently outperform other teams.</p>\n\n<p>In a high-hazard industry leaders also have to listen and respond to teams&rsquo; concerns about risk, and be prepared to challenge teams to think about risks that might be associated with their plans.</p>\n\n<p>In both cases, those leaders who involve their teams in planning and decision-making are also most likely to have happier, more motivated and productive team members.</p>\n",
+    "_classes": "",
+    "_trackingId": 3,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863bb",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b4",
+    "_backgroundSwitcher": {
+      "_isEnabled": true,
+      "mobileSrc": "course/en/assets/ea125b6239687c3e8968770a5bacb1fba4e35ca1.jpg",
+      "src": "course/en/assets/3b7bc8c390f4b932f31e06555cc0cb8e5adb9ea7.jpg"
+    },
+    "bp_boa_theme": {
+      "_backgroundImage": {
+        "_small": "",
+        "_medium": "",
+        "_large": ""
+      },
+      "_minimumHeights": {
+        "_large": 0
+      }
+    }
+  },
+  {
+    "title": "023",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "orange-bg-color",
+    "_trackingId": 4,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863bc",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b6",
+    "_backgroundSwitcher": {
+      "_isEnabled": false,
+      "mobileSrc": "",
+      "src": ""
+    },
+    "bp_boa_theme": {
+      "_backgroundImage": {
+        "_small": "",
+        "_medium": "",
+        "_large": ""
+      },
+      "_minimumHeights": {
+        "_large": null
+      }
+    }
+  },
+  {
+    "title": "027",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "darkgreen-bg-color",
+    "_trackingId": 5,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863bd",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b7",
+    "_backgroundSwitcher": {
+      "_isEnabled": false,
+      "mobileSrc": "",
+      "src": ""
+    }
+  },
+  {
+    "title": "010 ",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "_trackingId": 6,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863be",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b4",
+    "_backgroundSwitcher": {
+      "_isEnabled": false,
+      "mobileSrc": "",
+      "src": ""
+    }
+  },
+  {
+    "title": "025",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "_trackingId": 7,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863bf",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b6",
+    "_backgroundSwitcher": {
+      "_isEnabled": false,
+      "mobileSrc": "",
+      "src": ""
+    }
+  },
+  {
+    "title": "Block slider - part 1",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "_trackingId": 8,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863c0",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b5",
+    "_backgroundSwitcher": {
+      "_isEnabled": false,
+      "mobileSrc": "",
+      "src": ""
+    }
+  },
+  {
+    "title": "030",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "block-border",
+    "_trackingId": 9,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863c1",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b7",
+    "_backgroundSwitcher": {
+      "_isEnabled": false,
+      "mobileSrc": "",
+      "src": ""
+    }
+  },
+  {
+    "title": "Block slider - part 2",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "_trackingId": 10,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863c2",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b5",
+    "_backgroundSwitcher": {
+      "_isEnabled": false,
+      "mobileSrc": "",
+      "src": ""
+    }
+  },
+  {
+    "title": "015",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "_trackingId": 11,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863c3",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b4",
+    "_backgroundSwitcher": {
+      "_isEnabled": false,
+      "mobileSrc": "course/en/assets/587b54d2b6654f738c2622dbdab4784a0eed52cb.jpg",
+      "src": "course/en/assets/587b54d2b6654f738c2622dbdab4784a0eed52cb.jpg"
+    },
+    "bp_boa_theme": {
+      "_backgroundImage": {
+        "_small": "",
+        "_medium": "course/en/assets/587b54d2b6654f738c2622dbdab4784a0eed52cb.jpg",
+        "_large": "course/en/assets/587b54d2b6654f738c2622dbdab4784a0eed52cb.jpg"
+      },
+      "_minimumHeights": {
+        "_large": 0
+      }
+    }
+  },
+  {
+    "title": "Block slider - part 4",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "_trackingId": 12,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863b8",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b5",
+    "_backgroundSwitcher": {
+      "_isEnabled": false,
+      "mobileSrc": "",
+      "src": ""
+    }
+  },
+  {
+    "title": "035 ",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "_trackingId": 13,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863c4",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b7",
+    "_backgroundSwitcher": {
+      "_isEnabled": false,
+      "mobileSrc": "",
+      "src": ""
+    },
+    "bp_boa_theme": {
+      "_backgroundImage": {
+        "_small": "",
+        "_medium": "",
+        "_large": ""
+      },
+      "_minimumHeights": {
+        "_large": null
+      }
+    }
+  },
+  {
+    "title": "016",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "darkgreen-bg-color",
+    "_trackingId": 14,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863c5",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b4",
+    "_backgroundSwitcher": {
+      "_isEnabled": false,
+      "mobileSrc": "",
+      "src": ""
+    },
+    "bp_boa_theme": {
+      "_backgroundImage": {
+        "_small": "",
+        "_medium": "",
+        "_large": ""
+      },
+      "_minimumHeights": {
+        "_large": null
+      }
+    }
+  },
+  {
+    "title": "017",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "_trackingId": 15,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863c6",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b4",
+    "_backgroundSwitcher": {
+      "_isEnabled": false,
+      "mobileSrc": "",
+      "src": ""
+    }
+  },
+  {
+    "title": "040",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "_trackingId": 16,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863c7",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b7",
+    "_backgroundSwitcher": {
+      "_isEnabled": false,
+      "mobileSrc": "course/en/assets/0ae159c5c96e71b698d565cdf02a1b63116cff46.jpg",
+      "src": "course/en/assets/0ae159c5c96e71b698d565cdf02a1b63116cff46.jpg"
+    },
+    "bp_boa_theme": {
+      "_backgroundImage": {
+        "_small": "course/en/assets/0ae159c5c96e71b698d565cdf02a1b63116cff46.jpg",
+        "_medium": "course/en/assets/0ae159c5c96e71b698d565cdf02a1b63116cff46.jpg",
+        "_large": "course/en/assets/0ae159c5c96e71b698d565cdf02a1b63116cff46.jpg"
+      },
+      "_minimumHeights": {
+        "_large": 0
+      }
+    }
+  },
+  {
+    "title": "047",
+    "displayTitle": "Final thoughts",
+    "body": "<p>An engaged workforce cares deeply about conducting high-quality operations. Their high-quality work helps to better manage risk and eliminate defects, so these&nbsp;teams experience fewer incidents and are more productive&nbsp;in the long term.</p>\n\n<p>An engaged workforce is a product of the conditions established by leaders. When leaders are committed to working alongside the workforce to make improvements and reduce risk, teams are more effective and engaged. In BP, we firmly believe that great leadership and an engaged workforce are necessary for the long-term health and viability of our company.</p>\n\n<p><strong>Close your browser to finish. &nbsp;</strong></p>\n",
+    "_classes": "final-thoughts-block",
+    "_trackingId": 17,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_id": "5bb924350f02597f5af863c8",
+    "_type": "block",
+    "_parentId": "5bb924350f02597f5af863b7",
+    "_backgroundSwitcher": {
+      "src": "course/en/assets/8e80d7163cf7db3749590e84c35b12acdd9cb30e.jpg",
+      "mobileSrc": "course/en/assets/8e80d7163cf7db3749590e84c35b12acdd9cb30e.jpg",
+      "_isEnabled": true
+    },
+    "bp_boa_theme": {
+      "_backgroundImage": {
+        "_small": "",
+        "_medium": "",
+        "_large": ""
+      },
+      "_minimumHeights": {
+        "_large": null
+      }
+    }
+  }
+]
